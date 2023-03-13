@@ -15,5 +15,6 @@ set shiftwidth=4
 
 " view
 set number
+syntax on
 filetype on
 
