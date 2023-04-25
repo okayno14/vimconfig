@@ -1,8 +1,7 @@
 set nocompatible
 
 " column width
-set textwidth=80
-set colorcolumn=80
+set colorcolumn=100
 
 " tabs
 set autoindent
@@ -22,4 +21,14 @@ set clipboard=unnamed,unnamedplus
 set number
 syntax on
 filetype on
+filetype plugin on
+filetype indent off
+
+function TurnOffAutoInsertCommentLeader()
+    set fo-=r
+    set fo-=o
+endfunction
+
+" turn off new line comments
+autocmd BufNewFile,BufReadPost * call TurnOffAutoInsertCommentLeader()
 
