@@ -32,3 +32,6 @@ endfunction
 " turn off new line comments
 autocmd BufNewFile,BufReadPost * call TurnOffAutoInsertCommentLeader()
 
+" plugins
+so ~/.vim/plugins/trailing_spaces.vim
+
