@@ -1,9 +1,13 @@
-set nocompatible
-
+" view
+"=============================================================
 " column width
 set colorcolumn=100
+set number
+set showtabline=2
+"=============================================================
 
-" tabs
+"tabs
+"=============================================================
 set autoindent
 set smartindent
 " press <tab>
@@ -13,25 +17,34 @@ set tabstop=4
 " using < or >
 set expandtab
 set shiftwidth=4
+"=============================================================
 
-" registers
-set clipboard=unnamed,unnamedplus
-
-" view
-set number
-syntax on
-filetype on
-filetype plugin on
-filetype indent off
-
-function TurnOffAutoInsertCommentLeader()
+"autocomments
+"=============================================================
+function TurnOffAutoComments()
     set fo-=r
     set fo-=o
 endfunction
 
 " turn off new line comments
-autocmd BufNewFile,BufReadPost * call TurnOffAutoInsertCommentLeader()
+autocmd BufNewFile,BufReadPost * call TurnOffAutoComments()
+"=============================================================
+
+" registers
+set clipboard=unnamed,unnamedplus
+
+" search
+set path+=./**
 
 " plugins
+"=============================================================
+set nocompatible
+set exrc
+set secure
+syntax on
+filetype on
+filetype plugin on
+filetype indent off
 so ~/.vim/plugins/trailing_spaces.vim
+"=============================================================
 
