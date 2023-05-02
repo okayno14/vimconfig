@@ -34,7 +34,7 @@ autocmd BufNewFile,BufReadPost * call TurnOffAutoComments()
 set clipboard=unnamed,unnamedplus
 
 " search
-set path+=./**
+set path+=**
 
 " plugins
 "=============================================================
