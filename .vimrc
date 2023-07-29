@@ -51,6 +51,11 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent off
-so ~/.vim/plugins/trailing_spaces.vim
+
+if has('win32')
+    so ~/vimfiles/plugins/trailing_spaces.vim
+else
+    so ~/.vim/plugins/trailing_spaces.vim
+endif
 "=============================================================
 
