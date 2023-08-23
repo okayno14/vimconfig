@@ -1,4 +1,4 @@
-" snippets trailing space in declaration is neccessary, cause vim synthax
+" snippets trailing space in declaration is neccessary, cause vim syntax
 ab func 
 \%%--------------------------------------------------------------------<cr>
 \%% @doc<cr>

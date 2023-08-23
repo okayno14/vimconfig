@@ -25,17 +25,6 @@ set autoread
 au CursorHold,CursorHoldI * checktime
 "=============================================================
 
-"autocomments
-"=============================================================
-function TurnOffAutoComments()
-    set fo-=r
-    set fo-=o
-endfunction
-
-" turn off new line comments
-autocmd BufNewFile,BufReadPost * call TurnOffAutoComments()
-"=============================================================
-
 " registers
 set clipboard=unnamed,unnamedplus
 
@@ -51,11 +40,5 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent off
-
-if has('win32')
-    so ~/vimfiles/plugins/trailing_spaces.vim
-else
-    so ~/.vim/plugins/trailing_spaces.vim
-endif
 "=============================================================
 
