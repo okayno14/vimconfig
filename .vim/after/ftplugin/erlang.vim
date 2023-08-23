@@ -35,3 +35,5 @@ ab try
         \<c-t>ok<cr>
  \<c-d><c-d>end
 
+call TurnOffAutoComments()
+
