@@ -1,0 +1,3 @@
+[submodule ".vim/pack/redminewiki/start/vim-syntax-redminewiki"]
+	path = .vim/pack/redminewiki/start/vim-syntax-redminewiki
+	url = https://github.com/s3rvac/vim-syntax-redminewiki.git
