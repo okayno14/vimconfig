@@ -1,14 +1,16 @@
+call TurnOffAutoComments()
+
 " snippets trailing space in declaration is neccessary, cause vim syntax
 ab func 
 \%%--------------------------------------------------------------------<cr>
 \%% @doc<cr>
 \%% @end<cr>
+\%% @throws<cr>
 \-spec :func_name(:args_spec) -><cr>
-\<c-t>ok.<cr>
-\<c-d>%% @throws<cr>
-\%%--------------------------------------------------------------------<cr>
+    \<c-t>ok.<cr>
+\<c-d>%%--------------------------------------------------------------------<cr>
 \:func_name(:args) -><cr>
-\<c-t>ok.<cr>
+    \<c-t>ok.<cr>
 \<c-d>%%--------------------------------------------------------------------
 
 ab receive 
@@ -34,6 +36,4 @@ ab try
      \<c-t>ExceptionType:Reason -><cr>
         \<c-t>ok<cr>
  \<c-d><c-d>end
-
-call TurnOffAutoComments()
 
