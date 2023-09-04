@@ -1,5 +1,13 @@
 call TurnOffAutoComments()
 
+" позволяет переставить throws после спеки перед ней. Команда нужна, т.к.
+" в коде полно таких мест из-за старого сниппета
+function MoveThrowsUp()
+    normal "zdd?%% @end"zp/%% @throws
+endfunction
+
+command MoveThrows call MoveThrowsUp()
+
 " snippets trailing space in declaration is neccessary, cause vim syntax
 ab func 
 \%%--------------------------------------------------------------------<cr>
