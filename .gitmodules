@@ -4,3 +4,6 @@
 [submodule ".vim/pack/vim-erlang-omnicomplete/start/vim-erlang-omnicomplete"]
 	path = .vim/pack/vim-erlang-omnicomplete/start/vim-erlang-omnicomplete
 	url = https://github.com/vim-erlang/vim-erlang-omnicomplete.git
+[submodule ".vim/pack/vim-elixir/start/vim-elixir"]
+	path = .vim/pack/vim-elixir/start/vim-elixir
+	url = https://github.com/elixir-editors/vim-elixir.git
