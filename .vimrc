@@ -4,6 +4,11 @@
 set colorcolumn=100
 set number
 set showtabline=2
+
+" fixes glitch? in colors when using vim with tmux
+set background=dark
+set t_Co=256
+
 "=============================================================
 
 "tabs (indents)
