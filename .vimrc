@@ -9,6 +9,8 @@ set showtabline=2
 set background=dark
 set t_Co=256
 
+" other
+set nowrap
 "=============================================================
 
 "tabs (indents)
