@@ -1,3 +1,4 @@
+set textwidth=0
 call TurnOffAutoComments()
 
 " позволяет переставить throws после спеки перед ней. Команда нужна, т.к.
