@@ -38,7 +38,6 @@ set tabpagemax=99
 "autoread
 "=============================================================
 set autoread
-au CursorHold,CursorHoldI * checktime
 "=============================================================
 
 " registers
@@ -60,5 +59,6 @@ filetype indent off
 runtime ls.vim
 runtime ctrlp.vim
 runtime maps.vim
+runtime autocmd.vim
 "=============================================================
 
