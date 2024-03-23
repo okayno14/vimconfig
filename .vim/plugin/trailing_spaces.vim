@@ -1,6 +1,6 @@
 " сделать suppress выписов, если пробелы не были найдены
 function TrailingSpacesDel()
-    %s/[ ]\+$//
+    :silent! %s/[ ]\+$//
 endfunction
 
 command TsDel call TrailingSpacesDel()
