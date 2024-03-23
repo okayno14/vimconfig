@@ -5,3 +5,5 @@ endfunction
 
 command TsDel call TrailingSpacesDel()
 
+autocmd BufWritePre * TsDel
+
