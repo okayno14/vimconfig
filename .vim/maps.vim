@@ -7,6 +7,7 @@ nnoremap  <leader>C <Plug>(un-comment)
 nnoremap  ,,        <Plug>(one-line-comment)
 
 " ctrlp
+let g:ctrlp_map = ''
 nnoremap fp :CtrlP<CR>
 nnoremap fb :CtrlPBuffer<CR>
 
