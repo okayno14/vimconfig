@@ -54,6 +54,7 @@ filetype plugin on
 filetype indent off
 
 runtime ls.vim
+runtime ctrlp.vim
 "=============================================================
 
 " other
