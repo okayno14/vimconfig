@@ -2,9 +2,9 @@ let g:mapleader = ","
 
 " simple-commenter
 let g:scomment_default_mapping = 0
-nnoremap  <leader>c <Plug>(do-comment)
-nnoremap  <leader>C <Plug>(un-comment)
-nnoremap  ,,        <Plug>(one-line-comment)
+map  <leader>c <Plug>(do-comment)
+map  <leader>C <Plug>(un-comment)
+map  ,,        <Plug>(one-line-comment)
 
 " ctrlp
 let g:ctrlp_map = ''
