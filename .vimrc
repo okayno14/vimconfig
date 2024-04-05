@@ -12,6 +12,7 @@ set t_Co=256
 " other
 set nowrap
 set foldcolumn=3
+set hlsearch
 "=============================================================
 
 "indents
