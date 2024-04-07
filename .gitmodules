@@ -19,3 +19,6 @@
 [submodule ".vim/pack/simple-commenter/start/simple-commenter"]
 	path = .vim/pack/simple-commenter/start/simple-commenter
 	url = https://github.com/c9s/simple-commenter.vim.git
+[submodule ".vim/pack/ansi/start/ansi"]
+	path = .vim/pack/ansi/start/ansi
+	url = https://github.com/powerman/vim-plugin-AnsiEsc.git
