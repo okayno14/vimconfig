@@ -47,6 +47,13 @@ set clipboard=unnamed,unnamedplus
 " search
 set path+=**
 
+" set grepcmd for specific OS
+if (has('win32') || has('win64')) && match(&shell, 'sh')
+        set grepprg=findstr\ /n
+    else
+        set grepprg=ag\ $*
+endif
+
 " plugins
 "=============================================================
 set nocompatible
