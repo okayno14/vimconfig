@@ -1,5 +1,10 @@
 let g:mapleader = ","
 
+" quickfix
+map <leader>f :grep '\b\b':copenp
+map <leader>] :cn
+map <leader>[ :cp
+
 " simple-commenter
 let g:scomment_default_mapping = 0
 map  <leader>c <Plug>(do-comment)
