@@ -1,5 +1,7 @@
 let g:mapleader = ","
 
+map <leader>s :%s:\<\>:
+
 " quickfix
 map <leader>f :grep '\b\b':copenp
 map <leader>] :cn
