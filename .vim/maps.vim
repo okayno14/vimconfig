@@ -17,7 +17,6 @@ map  ,,        <Plug>(one-line-comment)
 let g:ctrlp_map = ''
 nnoremap fp :CtrlP<CR>
 nnoremap fb :CtrlPBuffer<CR>
-nnoremap <c-r> :CtrlPBuffer<CR>
 
 let g:ctrlp_prompt_mappings = {
     \ 'PrtBS()':              ['<bs>', '<c-]>'],
