@@ -1,11 +1,15 @@
 let g:mapleader = ","
 
 map <leader>s :%s:\<\>:
+map <leader>f :lgrep '\b\b':lopenp
+
+" location list
+map <leader>] :lne
+map <leader>[ :lp
 
 " quickfix
-map <leader>f :grep '\b\b':copenp
-map <leader>] :cn
-map <leader>[ :cp
+map <leader>j :cn
+map <leader>k :cp
 
 " simple-commenter
 let g:scomment_default_mapping = 0
