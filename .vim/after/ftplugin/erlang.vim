@@ -2,8 +2,8 @@ set textwidth=0
 
 map ]M :call search('\.$')
 map [M :call search('\.$', 'b')
-map ]m :call search('->$')
-map [m :call search('->$', 'b')
+map ]m :call search(') ->$')^
+map [m :call search(') ->$', 'b')^
 
 " позволяет переставить throws после спеки перед ней. Команда нужна, т.к.
 " в коде полно таких мест из-за старого сниппета
