@@ -8,8 +8,8 @@ map <leader>] :lne
 map <leader>[ :lp
 
 " quickfix
-map <leader>j :cn
-map <leader>k :cp
+map <leader>} :cn
+map <leader>{ :cp
 
 " simple-commenter
 let g:scomment_default_mapping = 0
