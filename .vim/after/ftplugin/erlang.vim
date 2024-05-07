@@ -1,3 +1,7 @@
+set path=
+set path+=apps/**
+set path+=_build/default/lib/**
+
 set textwidth=0
 
 map ]M :call search('\.$')
