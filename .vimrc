@@ -2,7 +2,8 @@
 "=============================================================
 " column width
 set colorcolumn=100
-set number
+" set number
+set relativenumber
 set showtabline=2
 
 " fixes glitch? in colors when using vim with tmux
