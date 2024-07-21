@@ -64,6 +64,7 @@ endif
 " plugins
 "=============================================================
 set nocompatible
+set showcmd
 set exrc
 set secure
 syntax on
