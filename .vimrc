@@ -5,6 +5,11 @@ set colorcolumn=100
 " set number
 set relativenumber
 set showtabline=2
+set laststatus=2
+
+"statusline
+set statusline=%<%y\ %f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+
 
 " fixes glitch? in colors when using vim with tmux
 set background=dark
