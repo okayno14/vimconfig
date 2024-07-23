@@ -7,7 +7,7 @@ set path+=_build/default/lib/**
 if (has('win32') || has('win64')) && match(&shell, 'sh')
         set grepprg=findstr\ /n
     else
-        set grepprg=ag\ $* apps/ _build/
+        set grepprg=ag\ $*\ apps/\ _build/
 endif
 
 set textwidth=0
