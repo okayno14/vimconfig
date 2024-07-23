@@ -2,8 +2,9 @@
 "=============================================================
 " column width
 set colorcolumn=100
-" set number
 set relativenumber
+" can see relative number and absolute current
+set number
 set showtabline=2
 set laststatus=2
 
