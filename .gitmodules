@@ -22,3 +22,6 @@
 [submodule ".vim/pack/ansi/start/ansi"]
 	path = .vim/pack/ansi/start/ansi
 	url = https://github.com/powerman/vim-plugin-AnsiEsc.git
+[submodule ".vim/pack/fuzzyy/start/fuzzyy"]
+	path = .vim/pack/fuzzyy/start/fuzzyy
+	url = https://github.com/okayno14/fuzzyy.git
