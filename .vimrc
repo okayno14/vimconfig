@@ -21,6 +21,8 @@ set nowrap
 set foldcolumn=3
 set hlsearch
 set incsearch
+set wildmenu
+set wildoptions=pum
 "=============================================================
 
 "indents
