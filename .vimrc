@@ -61,7 +61,8 @@ set path+=**
 if (has('win32') || has('win64')) && match(&shell, 'sh')
         set grepprg=findstr\ /n
     else
-        set grepprg=ag\ $*
+        " игнорирует содержимое .gitignore
+        set grepprg=ag\ -U\ $*
 endif
 
 " plugins

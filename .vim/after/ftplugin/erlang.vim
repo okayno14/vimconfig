@@ -2,14 +2,6 @@ set path=
 set path+=apps/**
 set path+=_build/default/lib/**
 
-" search in otp apps and rebar deps
-" set grepcmd for specific OS
-if (has('win32') || has('win64')) && match(&shell, 'sh')
-        set grepprg=findstr\ /n
-    else
-        set grepprg=ag\ $*\ apps/\ _build/
-endif
-
 set textwidth=0
 
 map ]M :call search('\.$')
