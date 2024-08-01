@@ -91,33 +91,6 @@ let g:ctrlp_prompt_mappings = {
 
 " fuzzyy
 let g:enable_fuzzyy_keymaps = 0
-
-" open prompt
-" бесполезный
-" nnoremap <silent> <leader>fb :FuzzyInBuffer<CR>
-nnoremap <silent> <leader>ff :FuzzyFiles<CR>
-nnoremap <silent> <leader>fb :FuzzyBuffers<CR>
-nnoremap <silent> <leader>fc :FuzzyColors<CR>
-nnoremap <silent> <leader>fd :FuzzyHelps<CR>
-nnoremap <silent> <leader>fi :FuzzyCommands<CR>
-nnoremap <silent> <leader>fr :FuzzyGrep<CR>
-nnoremap <silent> <leader>fh :FuzzyHighlights<CR>
-
-" prompt navigation
-let g:fuzzyy_keymaps = {
-\     'menu_up': ["\<c-p>", "\<Up>"],
-\     'menu_down': ["\<c-n>", "\<Down>"],
-\     'menu_select': ["\<CR>"],
-\     'cursor_begining': ["\<c-a>"],
-\     'cursor_end': ["\<c-e>"],
-\     'delete_all': ["\<c-k>"],
-\     'delete_prefix': ["\<c-u>"],
-\     'exit': ["\<Esc>", "\<c-c>", "\<c-[>"],
-\     'preview_up': [],
-\     'preview_down': [],
-\     'preview_up_half_page': [],
-\     'preview_down_half_page': [],
-\ }
 "===== FUZZY SEARCH =====
 
 " vim-lsc
