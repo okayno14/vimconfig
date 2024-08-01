@@ -3,13 +3,20 @@ let g:mapleader = ","
 map <leader>s :%s:\<\>:
 map <leader>f :lgrep '\b\b':lopenp
 
-" location list
-map <leader>] :lne
-map <leader>[ :lp
+" [l]ocation list
+map ]l :lne
+map [l :lp
 
-" quickfix
-map <leader>} :cn
-map <leader>{ :cp
+" [c]uickfix
+map ]c :cn
+map [c :cp
+
+" [b]uffer
+map ]b :bn
+map [b :bp
+
+" open buffer list and select some
+nnoremap <Leader>b :ls t<CR>:b<Space>
 
 " start of line
 :cnoremap <C-A>		<Home>
