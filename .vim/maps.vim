@@ -8,8 +8,8 @@ map ]l :lne
 map [l :lp
 
 " [c]uickfix
-map ]c :cn
-map [c :cp
+map ]q :cn
+map [q :cp
 
 " [b]uffer
 map ]b :bn
