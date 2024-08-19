@@ -12,9 +12,12 @@ set laststatus=2
 set statusline=%<%y\ %f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 
 
+" COLORS
 " fixes glitch? in colors when using vim with tmux
 set background=dark
 set t_Co=256
+set termguicolors
+colorscheme catppuccin_mocha
 
 " other
 set nowrap
