@@ -25,3 +25,9 @@
 [submodule ".vim/pack/fuzzyy/start/fuzzyy"]
 	path = .vim/pack/fuzzyy/start/fuzzyy
 	url = https://github.com/okayno14/fuzzyy.git
+[submodule ".vim/pack/catppucin/start/catppucin"]
+	path = .vim/pack/catppucin/start/catppucin
+	url = https://github.com/catppuccin/vim.git
+[submodule ".vim/pack/andromeda/start/andromeda"]
+	path = .vim/pack/andromeda/start/andromeda
+	url = https://github.com/safv12/andromeda.vim.git
