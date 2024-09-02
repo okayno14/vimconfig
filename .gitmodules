@@ -31,3 +31,6 @@
 [submodule ".vim/pack/andromeda/start/andromeda"]
 	path = .vim/pack/andromeda/start/andromeda
 	url = https://github.com/safv12/andromeda.vim.git
+[submodule ".vim/pack/vimwiki/start/vimwiki"]
+	path = .vim/pack/vimwiki/start/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git

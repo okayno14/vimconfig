@@ -92,6 +92,7 @@ runtime ls.vim
 runtime ctrlp.vim
 runtime maps.vim
 runtime autocmd.vim
+runtime vimwiki.vim
 "=============================================================
 
 " позволяет прыгнуть из несохранённого буфера в другой
