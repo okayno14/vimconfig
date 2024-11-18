@@ -64,9 +64,6 @@ set tabpagemax=99
 set autoread
 "=============================================================
 
-" registers
-set clipboard=unnamed,unnamedplus
-
 " search
 set path+=**
 
