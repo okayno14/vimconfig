@@ -137,3 +137,6 @@ let g:lsc_auto_map = {
     \ 'Completion': 'completefunc',
 \}
 
+" git macros
+nnoremap gb :execute '!git blame -L ' . line(".") . ' ' . @%
+
