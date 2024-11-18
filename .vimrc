@@ -9,7 +9,7 @@ set showtabline=2
 set laststatus=2
 
 "statusline
-set statusline=%<%y\ %f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+set statusline=%<%y\ %f\ %h%m%r%=%-14.(%l,%c%V%)\ %P\ %{FugitiveStatusline()}
 
 
 " COLORS

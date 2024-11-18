@@ -138,5 +138,7 @@ let g:lsc_auto_map = {
 \}
 
 " git macros
-nnoremap gb :execute '!git blame -L ' . line(".") . ' ' . @%
+nnoremap gb :Git blame<CR>w
+nnoremap gd :Git diff %<CR>
+nnoremap gs :Git status -s<CR>
 
