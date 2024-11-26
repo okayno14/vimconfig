@@ -78,6 +78,15 @@ endif
 " позволяет прыгнуть из несохранённого буфера в другой
 set hidden
 
+" сохранение swp-файлов в домашней папке
+if has('win32') || has ('win64')
+    let $VIMHOME = $VIM."/vimfiles"
+else
+    let $VIMHOME = $HOME."/.vim"
+endif
+
+set directory=$VIMHOME/swp//
+
 " plugins
 "=============================================================
 set nocompatible
