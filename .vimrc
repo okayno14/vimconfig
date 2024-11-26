@@ -75,6 +75,9 @@ if (has('win32') || has('win64')) && match(&shell, 'sh')
         set grepprg=ag\ -U\ $*
 endif
 
+" позволяет прыгнуть из несохранённого буфера в другой
+set hidden
+
 " plugins
 "=============================================================
 set nocompatible
@@ -93,7 +96,4 @@ runtime maps.vim
 runtime autocmd.vim
 runtime vimwiki.vim
 "=============================================================
-
-" позволяет прыгнуть из несохранённого буфера в другой
-set hidden
 
