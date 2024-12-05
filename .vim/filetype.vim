@@ -5,6 +5,7 @@ endif
 
 augroup filetypedetect
   au! BufRead,BufNewFile *.redminewiki          setfiletype redminewiki
+  au! BufRead,BufNewFile *.escript              setfiletype erlang
   au! BufRead,BufNewFile rebar.config           setfiletype erlang
   au! BufRead,BufNewFile sys.config             setfiletype erlang
   au! BufRead,BufNewFile *.app.src              setfiletype erlang
