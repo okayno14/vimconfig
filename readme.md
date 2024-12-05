@@ -1,3 +1,17 @@
+# install
+
+Make folder for swp-files:
+
+```
+mkdir .vim/swp
+```
+
+## pull all packages
+
+```
+git submodule update --init --recursive
+```
+
 # Deps
 
 ag
