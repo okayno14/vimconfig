@@ -11,7 +11,6 @@ set laststatus=2
 "statusline
 set statusline=%<%y\ %f\ %h%m%r%=%-14.(%l,%c%V%)\ %P\ %{FugitiveStatusline()}
 
-
 " COLORS
 " fixes glitch? in colors when using vim with tmux
 set background=dark
@@ -90,6 +89,8 @@ set directory=$VIMHOME/swp//
 " plugins
 "=============================================================
 set nocompatible
+" показывает количество прыжков при поиске через n/N
+set shortmess-=S
 set showcmd
 set exrc
 set secure
