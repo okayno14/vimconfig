@@ -1,7 +1,7 @@
 let g:mapleader = ","
 
-map <leader>s :%s:\<\>:
-map <leader>fw :lgrep '\b\b':lopenp
+nnoremap <leader>s :%s:\<\>:
+nnoremap <leader>fw :lgrep '\b\b':lopenp
 
 " [l]ocation list
 map ]l :lne
