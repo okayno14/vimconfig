@@ -137,8 +137,9 @@ let g:lsc_auto_map = {
     \ 'Completion': 'completefunc',
 \}
 
-" git macros
+" git (fugitive) macros
 nnoremap gb :Git blame<CR>w
 nnoremap gd :Git diff %<CR>
 nnoremap gs :Git status -s<CR>
+nnoremap gl :Git log --graph --decorate<CR>
 
