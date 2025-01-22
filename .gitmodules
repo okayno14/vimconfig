@@ -40,3 +40,6 @@
 [submodule ".vim/pack/edkolev/start/erlang-motions"]
 	path = .vim/pack/edkolev/start/erlang-motions
 	url = https://github.com/edkolev/erlang-motions.vim.git
+[submodule ".vim/pack/gleam/start/gleam"]
+	path = .vim/pack/gleam/start/gleam
+	url = https://github.com/gleam-lang/gleam.vim.git
