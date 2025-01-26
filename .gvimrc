@@ -1,4 +1,4 @@
 " view GUI
-colorscheme desert
+colorscheme andromeda
 set guifont=Hack:h12
 
