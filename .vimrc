@@ -28,6 +28,10 @@ set t_Co=256
 set termguicolors
 colorscheme catppuccin_mocha
 
+set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf-8
+
 " other
 set nowrap
 set foldcolumn=3
