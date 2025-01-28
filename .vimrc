@@ -109,5 +109,6 @@ runtime fuzzyy.vim
 runtime maps.vim
 runtime autocmd.vim
 runtime vimwiki.vim
+runtime slime_conf.vim
 "=============================================================
 
