@@ -43,3 +43,6 @@
 [submodule ".vim/pack/gleam/start/gleam"]
 	path = .vim/pack/gleam/start/gleam
 	url = https://github.com/gleam-lang/gleam.vim.git
+[submodule ".vim/pack/jpalardy/start/vim-slime"]
+	path = .vim/pack/jpalardy/start/vim-slime
+	url = https://github.com/jpalardy/vim-slime.git
