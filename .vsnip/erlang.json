@@ -1,0 +1,93 @@
+{
+	"func":{
+		"prefix": "func",
+		"description": "named function definition",
+		"body": [
+			"%%--------------------------------------------------------------------",
+			"%% @doc",
+			"-spec :func_name(:args_spec) ->",
+			"    ok.",
+			"%%--------------------------------------------------------------------",
+			":func_name(:args)->",
+			"    ok.",
+			"%%--------------------------------------------------------------------",
+		]
+	},
+
+    "receive":{
+        "prefix": "receive_my_snip",
+        "description": "match message queue block",
+        "body": [
+            "receive",
+            "    _M ->",
+            "        ok",
+            "after",
+            "    0 ->",
+            "        ok",
+            "end"
+        ]
+    },
+
+    "case":{
+        "prefix": "case",
+        "description": "case",
+        "body": [
+            "case :var of",
+            "   :case1 ->",
+            "       ok",
+            "end"
+        ]
+    },
+
+    "try":{
+        "prefix": "try",
+        "description": "try",
+        "body": [
+            "try :var of",
+            "   ok",
+            "catch",
+            "   ExceptionType:Reason:ST ->",
+            "       ok",
+            "end"
+        ]
+    },
+
+    "sep":{
+        "prefix": "sep",
+        "description": "sep",
+        "body": [
+            "%%%===================================================================",
+            "%%%",
+            "%%%==================================================================="
+        ]
+    },
+
+	"print to console": {
+		"prefix": "log",
+		"body": [
+			"io:format(\"~p~n\", [$1]);",
+			"$2"
+		],
+		"description": "Log output to console"
+	},
+
+    "eunit tests": {
+        "prefix": "eunit",
+        "body": [
+            "-ifdef(TEST).",
+			"-include_lib(\"eunit/include/eunit.hrl\").",
+			"",
+			"%%%===================================================================",
+			"%%% Tests",
+			"%%%===================================================================",
+			"",
+			"$1_test() ->",
+			"   $2.",
+			"",
+			"-endif.",
+			"$3"
+        ],
+        "description": "eunit tests section"
+    }
+}
+

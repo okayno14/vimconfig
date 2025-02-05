@@ -110,5 +110,6 @@ runtime maps.vim
 runtime autocmd.vim
 runtime vimwiki.vim
 runtime slime_conf.vim
+runtime vsnip.vim
 "=============================================================
 

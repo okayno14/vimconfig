@@ -6,6 +6,12 @@ Make folder for swp-files:
 mkdir .vim/swp
 ```
 
+## Files
+
+.vim
+.vimrc
+.vsnip/
+
 ## pull all packages
 
 ```
