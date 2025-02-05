@@ -52,3 +52,6 @@
 [submodule ".vim/pack/hrsh7th/start/vim-vsnip-integ"]
 	path = .vim/pack/hrsh7th/start/vim-vsnip-integ
 	url = https://github.com/hrsh7th/vim-vsnip-integ.git
+[submodule ".vim/pack/tibabit/start/vim-templates"]
+	path = .vim/pack/tibabit/start/vim-templates
+	url = https://github.com/tibabit/vim-templates.git
