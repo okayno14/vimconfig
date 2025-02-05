@@ -4,6 +4,8 @@ set path+=_build/default/lib/**
 
 set textwidth=0
 
+set formatprg=erlfmt\ -
+
 " позволяет переставить throws после спеки перед ней. Команда нужна, т.к.
 " в коде полно таких мест из-за старого сниппета
 function MoveThrowsUp()
