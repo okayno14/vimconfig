@@ -18,6 +18,8 @@ ag
 
 utils
 
+jq
+
 # How add new package
 
 ```
