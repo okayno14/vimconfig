@@ -88,6 +88,23 @@
 			"$3"
         ],
         "description": "eunit tests section"
-    }
+    },
+
+
+	"logger":{
+		"prefix": "logger",
+		"description": "logger macro",
+		"body": [
+            "-include_lib(\"kernel/include/logger.hrl\")."
+		]
+	},
+
+	"chronica":{
+		"prefix": "chronica",
+		"description": "chronica macro",
+		"body": [
+            "-include_lib(\"chronica/include/chronica.hrl\")."
+		]
+	}
 }
 
