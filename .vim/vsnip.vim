@@ -27,3 +27,5 @@ let g:vsnip_filetypes = {}
 let g:vsnip_filetypes.javascriptreact = ['javascript']
 let g:vsnip_filetypes.typescriptreact = ['typescript']
 
+" Для работы маппингов (after/ftplugin/erlang.vim)
+let g:vsnip_deactivate_on = g:vsnip#DeactivateOn.OutsideOfSnippet
