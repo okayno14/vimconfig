@@ -11,6 +11,7 @@ mkdir .vim/swp
 .vim
 .vimrc
 .vsnip/
+.templates
 
 ## pull all packages
 
