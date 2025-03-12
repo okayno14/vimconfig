@@ -140,6 +140,9 @@ let g:lsc_auto_map = {
     \ 'Completion': 'completefunc',
 \}
 
+" alt_l - перезапуск lsp-сервера
+nnoremap l :LSClientRestartServer<CR>
+
 " git (fugitive) macros
 nnoremap gb :Git blame<CR>w
 nnoremap gd :Git diff %<CR>
