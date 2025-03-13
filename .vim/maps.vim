@@ -145,7 +145,21 @@ nnoremap l :LSClientRestartServer<CR>
 
 " git (fugitive) macros
 nnoremap gb :Git blame<CR>w
-nnoremap gd :Git diff %<CR>
+" для сравнения с индексом
+nnoremap gd :Gdiffsplit<CR>
+" для merge-конфликтов
+nnoremap gm :Gdiffsplit!<CR>
 nnoremap gs :Git<CR>
 nnoremap gl :Git log --graph --decorate<CR>
+nnoremap glf :Git log --graph --decorate %<CR>
+nnoremap gc :Git commit<CR>
+
+" Облегчает интерактивное сравнение веток
+" Как пользоваться:
+" Пусть есть branch_a, branch_b
+" Надо зачекаутить branch_b (нужно для Gdiffsplit)
+" Далее вызываем: GCompare branch_a branch_b
+" Двигаемся по списку
+" Теперь для сравнения вызываем: Gdiffsplit branch_a
+command -nargs=+ GCompare Git difftool --name-only --numstat <args>
 
