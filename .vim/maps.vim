@@ -150,9 +150,11 @@ nnoremap gd :Gdiffsplit<CR>
 " для merge-конфликтов
 nnoremap gm :Gdiffsplit!<CR>
 nnoremap gs :Git<CR>
-nnoremap gl :Git log --graph --decorate<CR>
-nnoremap glf :Git log --graph --decorate %<CR>
 nnoremap gc :Git commit<CR>
+
+nnoremap gl :Git log --graph --decorate -10<CR>
+nnoremap gll :Git log --graph --decorate<CR>
+nnoremap glf :Git log --graph --decorate %<CR>
 
 " Облегчает интерактивное сравнение веток
 " Как пользоваться:
