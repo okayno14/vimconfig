@@ -27,3 +27,7 @@ command MoveThrows call MoveThrowsUp()
 " аргументы, через :s убираем спецификации типов
 imap <C-Q> dib3-yib3+%P:.s/ :: [a-zA-Z0-9_]\+()//g<CR>%%i
 
+" Позволяет искать приложения, зависимые от <args>
+command -nargs=1 -bar Deps grep '\b<args>\b' -G '.*\.app\.src$' | copen
+command -nargs=1 -bar Depsl lgrep '\b<args>\b' -G '.*\.app\.src$' | lopen
+
