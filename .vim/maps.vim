@@ -4,7 +4,8 @@ set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁ
 let g:mapleader = ","
 
 nnoremap <leader>s :%s:\<\>:
-nnoremap <leader>fw :lgrep '\b\b':lopenp
+nnoremap <leader>fw :grep '\b\b':copenp
+nnoremap <leader>flw :lgrep '\b\b':lopenp
 
 " [l]ocation list
 map ]l :lne
