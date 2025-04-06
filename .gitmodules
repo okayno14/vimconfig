@@ -55,3 +55,9 @@
 [submodule ".vim/pack/tibabit/start/vim-templates"]
 	path = .vim/pack/tibabit/start/vim-templates
 	url = https://github.com/tibabit/vim-templates.git
+[submodule ".vim/pack/tpope/start/vim-dadbod"]
+	path = .vim/pack/tpope/start/vim-dadbod
+	url = https://github.com/tpope/vim-dadbod.git
+[submodule ".vim/pack/kristijanhusak/start/vim-dadbod-ui"]
+	path = .vim/pack/kristijanhusak/start/vim-dadbod-ui
+	url = https://github.com/kristijanhusak/vim-dadbod-ui.git
