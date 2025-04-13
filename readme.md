@@ -34,3 +34,7 @@ mkdir .vim/pack/<org>/start
 git submodule add <git-url> .vim/pack/<org>/start/<pack>
 ```
 
+# vimwiki
+
+Смотри репозиторий utils, (.local/lib/utils/common/style.css).
+
