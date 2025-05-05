@@ -5,6 +5,7 @@ set path+=_build/default/lib/**
 set textwidth=0
 
 set formatprg=erlfmt\ -
+set makeprg=env\ TERM=dumb\ rebar3\ compile
 
 " Фишка в том, что при работе с vim-slime нет автодополнения.
 " vim-lsc инициализируется тогда, когда видит, что открыт файл с нужным
