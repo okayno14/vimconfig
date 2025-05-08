@@ -15,7 +15,7 @@ function! MyErlFold()
     endif
 
     " 4
-    if match(getline(v:lnum-1), '%%%=\{67,67\}') && match(getline(v:lnum-2), '%%% ') && match(getline(v:lnum-2), '%%%=\{67,67\}') == 0
+    if match(getline(v:lnum-1), '%%%=\{67,67\}') == 0 && match(getline(v:lnum-3), '%%%=\{67,67\}') == 0
         return ">1"
     endif
 
