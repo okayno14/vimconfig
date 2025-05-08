@@ -32,3 +32,5 @@ imap <C-Q> dib3-yib3+%P:.s/ :: [a-zA-Z0-9_]\+()//g<CR>%%i
 command -nargs=1 -bar Deps grep '\b<args>\b' -G '.*\.app\.src$' | copen
 command -nargs=1 -bar Depsl lgrep '\b<args>\b' -G '.*\.app\.src$' | lopen
 
+runtime after/ftplugin/erl_fold.vim
+
