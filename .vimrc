@@ -78,6 +78,10 @@ if (has('win32') || has('win64')) && match(&shell, 'sh')
         set grepprg=ag\ -U\ $*
 endif
 
+" TODO сделать значение по умолчанию %
+" Команда для быстрого поиска todo
+command -nargs=1 -bar Todo grep --vimgrep todo '<args>'
+
 " позволяет прыгнуть из несохранённого буфера в другой
 set hidden
 
