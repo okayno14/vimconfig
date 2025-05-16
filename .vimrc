@@ -112,5 +112,7 @@ runtime vimwiki.vim
 runtime slime_conf.vim
 runtime vsnip.vim
 runtime templates.vim
+runtime dadbod_ui_complete.vim
+runtime fugitive.vim
 "=============================================================
 
