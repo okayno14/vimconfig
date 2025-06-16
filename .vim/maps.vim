@@ -141,6 +141,9 @@ let g:lsc_auto_map = {
     \ 'Completion': 'completefunc',
 \}
 
+" Показать сообщение с ошибкой линии highlight line
+nnoremap ghl :LSClientLineDiagnostics<CR>
+
 " alt_l - перезапуск lsp-сервера
 nnoremap l :LSClientRestartServer<CR>
 
