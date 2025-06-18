@@ -9,13 +9,6 @@ main(["init"]) ->
             ok
     end,
 
-    case file:make_link(HomeDir ++ "/.vim/projects_plugin/ssw_ls.vim", ".vimrc.backup") of
-        ok ->
-            ok;
-        {error, eexist} ->
-            ok
-    end,
-
     case file:make_link(HomeDir ++ "/.vim/projects_plugin/ssw.shell.nix", "shell.nix") of
         ok ->
             ok;
@@ -24,12 +17,6 @@ main(["init"]) ->
     end,
 
     0;
-main(["swap"]) ->
-    {ok, CurrentFile} = file:read_file(".vimrc"),
-    {ok, BackupFile} = file:read_file(".vimrc.backup"),
-    ok = file:write_file(".vimrc", BackupFile),
-    ok = file:write_file(".vimrc.backup", CurrentFile),
-    0;
 main(["help"]) ->
-    io:format("init, swap~n", []),
+    io:format("init~n", []),
     0.
