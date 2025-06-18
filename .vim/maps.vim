@@ -178,6 +178,7 @@ augroup lsp_install
     au!
     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+    call vsnip_integ#integration#vimlsp#attach()
 augroup END
 
 " git (fugitive) macros

@@ -21,6 +21,10 @@ let g:lsp_inlay_hints_enabled = 1
 let g:lsp_hover_ui = 'preview'
 let g:lsp_hover_conceal = 2
 
+" Для сниппетов
+let g:lsp_text_edit_enabled = 1
+let g:lsp_insert_text_enabled = 1
+
 function! LspLineDiagnostics() abort
     let l:diagnostic = lsp#internal#diagnostics#under_cursor#get_diagnostic()
     if empty(l:diagnostic) | return | endif
