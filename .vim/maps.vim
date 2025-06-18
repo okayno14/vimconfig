@@ -158,5 +158,6 @@ nnoremap gc :Git commit<CR>
 
 nnoremap gl :Git log --graph --decorate -10<CR>
 nnoremap gll :Git log --graph --decorate<CR>
+nnoremap glL :Git log --graph --decorate --all<CR>
 nnoremap glf :Git log --graph --decorate %<CR>
 
