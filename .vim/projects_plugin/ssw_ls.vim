@@ -6,8 +6,8 @@ let g:fuzzyy_files_ignore_dir = ['.git', '.hg', '.svn', '.rebar', '.eunit', 'ecs
 
 let g:lsc_server_commands = {
     \ 'erlang': {
-    \   'name': 'erlang.elp',
-    \   'command': 'nix-shell --command "elp server"',
+    \   'name': 'erlang.ls',
+    \   'command': 'erlang_ls',
     \   'enabled': v:true,
     \ },
     \}
