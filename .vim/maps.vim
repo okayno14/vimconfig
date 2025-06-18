@@ -142,10 +142,43 @@ let g:lsc_auto_map = {
 \}
 
 " Показать сообщение с ошибкой линии highlight line
-nnoremap ghl :LSClientLineDiagnostics<CR>
+nnoremap ghl :call LspLineDiagnostics()<CR>
 
 " alt_l - перезапуск lsp-сервера
 nnoremap l :LSClientRestartServer<CR>
+
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> <C-]> <plug>(lsp-definition)
+    nmap <buffer> gs <plug>(lsp-document-symbol-search)
+    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gI <plug>(lsp-implementation)
+    nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>gR <plug>(lsp-rename)
+    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+    nmap <buffer> gh <plug>(lsp-hover)
+    nmap <buffer> go <plug>(lsp-document-symbol)
+"     nmap <buffer> go <plug>(lsp-document-symbol-search)
+    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> <C-n> <plug>(lsp-next-reference)
+    nmap <buffer> <C-p> <plug>(lsp-previous-reference)
+    nmap <buffer> ga <plug>(lsp-code-action)
+    nmap <buffer> gm <plug>(lsp-signature-help)
+    nnoremap <leader>h <plug>(lsp-preview-focus)
+
+    let g:lsp_format_sync_timeout = 1000
+    " refer to doc to add more commands
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
 
 " git (fugitive) macros
 nnoremap gb :Git blame<CR>w
