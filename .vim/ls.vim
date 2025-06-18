@@ -28,6 +28,6 @@ let g:lsp_insert_text_enabled = 1
 function! LspLineDiagnostics() abort
     let l:diagnostic = lsp#internal#diagnostics#under_cursor#get_diagnostic()
     if empty(l:diagnostic) | return | endif
-    echo l:diagnostic
+    echo get(l:diagnostic, 'message') . "\n" . get(get(l:diagnostic, 'codeDescription'), 'href')
 endfunction
 
