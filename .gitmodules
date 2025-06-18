@@ -64,3 +64,6 @@
 [submodule ".vim/pack/kristijanhusak/start/vim-dadbod-completion"]
 	path = .vim/pack/kristijanhusak/start/vim-dadbod-completion
 	url = https://github.com/kristijanhusak/vim-dadbod-completion.git
+[submodule ".vim/pack/vim-lsp/start/vim-lsp"]
+	path = .vim/pack/vim-lsp/start/vim-lsp
+	url = https://github.com/prabirshrestha/vim-lsp.git
