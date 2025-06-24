@@ -17,6 +17,7 @@ let g:lsp_diagnostics_virtual_text_enabled = 0
 let g:lsp_float_max_width = 0
 
 let g:lsp_inlay_hints_enabled = 1
+let g:lsp_inlay_hints_delay = 1000
 
 let g:lsp_hover_ui = 'preview'
 let g:lsp_hover_conceal = 2
