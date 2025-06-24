@@ -31,3 +31,8 @@ function! LspLineDiagnostics() abort
     echo get(l:diagnostic, 'message') . "\n" . get(get(l:diagnostic, 'codeDescription'), 'href')
 endfunction
 
+packadd unused
+
+com! LspCallHierarchyIncomingTree  call lsp#call_hierarchy_tree#show(v:false)
+com! LspCallHierarchyOutgoingTree  call lsp#call_hierarchy_tree#show(v:true)
+
