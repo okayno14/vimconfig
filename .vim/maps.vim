@@ -152,7 +152,6 @@ function! s:on_lsp_buffer_enabled() abort
     setlocal signcolumn=yes
     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
     nmap <buffer> <C-]> <plug>(lsp-definition)
-    nmap <buffer> gs <plug>(lsp-document-symbol-search)
     nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
     nmap <buffer> gr <plug>(lsp-references)
     nmap <buffer> gI <plug>(lsp-implementation)
@@ -161,8 +160,7 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> [g <plug>(lsp-previous-diagnostic)
     nmap <buffer> ]g <plug>(lsp-next-diagnostic)
     nmap <buffer> gh <plug>(lsp-hover)
-    nmap <buffer> go <plug>(lsp-document-symbol)
-"     nmap <buffer> go <plug>(lsp-document-symbol-search)
+    nmap <buffer> go <plug>(lsp-document-symbol-search)
     nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
     nmap <buffer> <C-n> <plug>(lsp-next-reference)
     nmap <buffer> <C-p> <plug>(lsp-previous-reference)
