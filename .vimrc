@@ -82,6 +82,8 @@ endif
 " Команда для быстрого поиска todo
 command -nargs=1 -bar Todo grep --vimgrep todo '<args>'
 
+" Открывает файл системным viewer-ом
+let g:netrw_browsex_viewer='xdg-open'
 " позволяет прыгнуть из несохранённого буфера в другой
 set hidden
 
