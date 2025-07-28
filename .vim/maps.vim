@@ -19,7 +19,7 @@ map [q :cp
 map ]b :bn
 map [b :bp
 " open buffer list and select some
-nnoremap <Leader>b :ls t<CR>:b<Space>
+nnoremap <Leader>b :ls t<CR>:b
 nnoremap <leader>bd :bd
 
 " start of line
