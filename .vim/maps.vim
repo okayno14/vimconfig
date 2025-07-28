@@ -124,25 +124,6 @@ let g:fuzzyy_keymaps = {
 \ }
 "===== FUZZY SEARCH =====
 
-" vim-lsc
-let g:lsc_auto_map = {
-    \ 'GoToDefinition': '<C-]>',
-    \ 'GoToDefinitionSplit': ['<C-W>]', '<C-W><C-]>'],
-    \ 'FindReferences': 'gr',
-    \ 'NextReference': '<C-n>',
-    \ 'PreviousReference': '<C-p>',
-    \ 'FindImplementations': 'gI',
-    \ 'FindCodeActions': 'ga',
-    \ 'Rename': 'gR',
-    \ 'ShowHover': 'gh',
-    \ 'DocumentSymbol': 'go',
-    \ 'WorkspaceSymbol': 'gS',
-    \ 'SignatureHelp': 'gm',
-    \ 'Completion': 'completefunc',
-\}
-
-" Показать сообщение с ошибкой линии highlight line
-nnoremap ghl :call LspLineDiagnostics()<CR>
 
 " alt_l - перезапуск lsp-сервера
 nnoremap l :LSClientRestartServer<CR>
@@ -167,6 +148,9 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> ga <plug>(lsp-code-action)
     nmap <buffer> gm <plug>(lsp-signature-help)
     nnoremap <leader>h <plug>(lsp-preview-focus)
+
+    " Показать сообщение с ошибкой линии highlight line
+    nnoremap ghl :call LspLineDiagnostics()<CR>
 
     let g:lsp_format_sync_timeout = 1000
     " refer to doc to add more commands
