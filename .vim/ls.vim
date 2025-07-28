@@ -40,3 +40,5 @@ com! LspCallHierarchyOutgoingTree  call lsp#call_hierarchy_tree#show(v:true)
 com! LspInlayHintsDisable call lsp#internal#inlay_hints#_disable()
 com! LspInlayHintsEnable call lsp#internal#inlay_hints#_enable()
 
+com! LspDiagnosticsDisable call lsp#disable_diagnostics_for_buffer()
+com! LspDiagnosticsEnable call lsp#enable_diagnostics_for_buffer()
