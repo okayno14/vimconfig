@@ -1,6 +1,9 @@
+let s:erlang_lsp = ['elp', 'server']
+" let s:erlang_lsp = ['erlang_ls']
+
 au User lsp_setup call lsp#register_server({
     \ 'name': 'erlang',
-    \ 'cmd': ['elp', 'server'],
+    \ 'cmd': s:erlang_lsp,
     \ 'allowlist': ['erlang'],
     \ })
 
