@@ -6,6 +6,7 @@ let g:mapleader = ","
 nnoremap <leader>s :%s:\<\>:
 nnoremap <leader>fw :grep '\b\b':copenp
 nnoremap <leader>flw :lgrep '\b\b':lopenp
+nnoremap <leader>m :marks QWE<CR>:normal `
 
 " [l]ocation list
 map ]l :lne
