@@ -26,7 +26,23 @@ command MoveThrows call MoveThrowsUp()
 " Чтобы использовать нужно нажать backspace и <C-Q>
 " Работает так: удаляем скобки, идём до спеки, копируем, вставляем в
 " аргументы, через :s убираем спецификации типов
-imap <C-Q> dib3-yib3+%P:.s/ :: [a-zA-Z0-9_]\+()//g<CR>%%i
+" Var :: type()
+" Var :: mod:type()
+" Var :: #type{}
+" Var :: [type()]
+" Var :: {type()}
+" imap <C-Q> dib3-yib3+%P:.s/ :: [a-zA-Z0-9_:#]\+()//g<CR>%%i
+imap <C-Q> :call Foo1()
+
+function Foo1()
+    let old_search = @/
+    normal dib3-yib3+%P
+"     exe '.s/ :: [a-zA-Z0-9_:#]\+[({][)}]//g'
+"     exe '.s/ :: [a-zA-Z0-9_:#(){}\[\]]\+[{()}]\{2,2\}[}\]]\?//g'
+    exe '.s/ :: [a-zA-Z0-9_:#(){}\[\]]\+[({][)}][}\]]\?//g'
+    let @/ = old_search
+    normal %%l
+endfunction
 
 " Позволяет искать приложения, зависимые от <args>
 command -nargs=1 -bar Deps grep '\b<args>\b' -G '.*\.app\.src$' | copen
