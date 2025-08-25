@@ -65,6 +65,19 @@ let g:netrw_browsex_viewer='xdg-open'
 " Открывает файл в правом окне, если проводник слева
 let g:netrw_chgwin=2
 
+"vimpager
+"=============================================================
+if !exists('g:vimpager')
+  let g:vimpager = {}
+endif
+
+if !exists('g:less')
+  let g:less     = {}
+endif
+
+let g:less.enabled = 0
+let g:vimpager.passthrough = 1
+
 "tabs
 "=============================================================
 set tabpagemax=99
