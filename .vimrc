@@ -76,7 +76,7 @@ if !exists('g:less')
 endif
 
 let g:less.enabled = 0
-let g:vimpager.passthrough = 1
+let g:vimpager.passthrough = 0
 
 "tabs
 "=============================================================
