@@ -67,3 +67,6 @@
 [submodule ".vim/pack/vim-lsp/start/vim-lsp"]
 	path = .vim/pack/vim-lsp/start/vim-lsp
 	url = https://github.com/okayno14/vim-lsp.git
+[submodule ".vim/pack/tpope/start/vim-commentary"]
+	path = .vim/pack/tpope/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
