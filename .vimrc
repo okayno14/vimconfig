@@ -1,7 +1,7 @@
 " view
 "=============================================================
 " column width
-set colorcolumn=100
+set colorcolumn=85
 set relativenumber
 " can see relative number and absolute current
 set number
