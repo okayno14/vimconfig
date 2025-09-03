@@ -47,3 +47,7 @@ com! LspInlayHintsEnable call lsp#internal#inlay_hints#_enable()
 
 com! LspDiagnosticsDisable call lsp#disable_diagnostics_for_buffer()
 com! LspDiagnosticsEnable call lsp#enable_diagnostics_for_buffer()
+
+com! LspDisable call lsp#disable()
+com! LspEnable call lsp#enable()
+
