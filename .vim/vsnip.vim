@@ -1,5 +1,3 @@
-" NOTE: You can use other key to expand snippet.
-
 " Expand
 imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
 smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
@@ -23,9 +21,9 @@ smap <expr> <S-Tab> vsnip#jumpable(-1)  ? '<Plug>(vsnip-jump-prev)'      : '<S-T
 
 " If you want to use snippet for multiple filetypes, you can `g:vsnip_filetypes` for it.
 let g:vsnip_filetypes = {}
-" let g:vsnip_filetypes.erlang = ['erlang']
-let g:vsnip_filetypes.javascriptreact = ['javascript']
-let g:vsnip_filetypes.typescriptreact = ['typescript']
+let g:vsnip_filetypes.erlang = ['erlang']
+" let g:vsnip_filetypes.javascriptreact = ['javascript']
+" let g:vsnip_filetypes.typescriptreact = ['typescript']
 
 " Для работы маппингов (after/ftplugin/erlang.vim)
 let g:vsnip_deactivate_on = g:vsnip#DeactivateOn.OutsideOfSnippet
