@@ -1,9 +1,11 @@
-let s:erlang_lsp = ['elp', 'server']
-" let s:erlang_lsp = ['erlang_ls']
+if !exists("g:erlang_lsp")
+    let g:erlang_lsp = ['elp', 'server']
+    " let g:erlang_lsp = ['erlang_ls']
+endif
 
 au User lsp_setup call lsp#register_server({
     \ 'name': 'erlang',
-    \ 'cmd': s:erlang_lsp,
+    \ 'cmd': g:erlang_lsp,
     \ 'allowlist': ['erlang'],
     \ })
 
