@@ -4,9 +4,6 @@
 [submodule ".vim/pack/vim-elixir/start/vim-elixir"]
 	path = .vim/pack/vim-elixir/start/vim-elixir
 	url = https://github.com/elixir-editors/vim-elixir.git
-[submodule ".vim/pack/vim-lsc/start/vim-lsc"]
-	path = .vim/pack/vim-lsc/start/vim-lsc
-	url = https://github.com/natebosch/vim-lsc.git
 [submodule ".vim/pack/plantuml-syntax/start/plantuml-syntax"]
 	path = .vim/pack/plantuml-syntax/start/plantuml-syntax
 	url = https://github.com/aklt/plantuml-syntax.git
