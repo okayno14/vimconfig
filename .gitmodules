@@ -61,3 +61,6 @@
 [submodule ".vim/pack/tpope/start/vim-commentary"]
 	path = .vim/pack/tpope/start/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
+[submodule ".vim/pack/letorbi/start/vim-colors-modern-borland"]
+	path = .vim/pack/letorbi/start/vim-colors-modern-borland
+	url = https://github.com/letorbi/vim-colors-modern-borland.git
