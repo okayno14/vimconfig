@@ -64,3 +64,6 @@
 [submodule ".vim/pack/letorbi/start/vim-colors-modern-borland"]
 	path = .vim/pack/letorbi/start/vim-colors-modern-borland
 	url = https://github.com/letorbi/vim-colors-modern-borland.git
+[submodule ".vim/pack/regularhunter/start/builder_dark"]
+	path = .vim/pack/regularhunter/start/builder_dark
+	url = https://github.com/regularhunter/builder-dark.vim.git
