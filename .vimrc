@@ -118,6 +118,13 @@ set directory=$VIMHOME/swp//
 "=============================================================
 set diffopt=inline:word,iwhite,filler,internal,closeoff,algorithm:myers,context:5,linematch:100,indent-heuristic
 
+" utils
+"=============================================================
+
+function AbsPath()
+    return getcwd() . '/' . @%
+endfunction
+
 " plugins
 "=============================================================
 set nocompatible
