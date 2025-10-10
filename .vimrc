@@ -149,5 +149,6 @@ runtime vsnip.vim
 runtime templates.vim
 runtime dadbod_ui_complete.vim
 runtime fugitive.vim
+runtime tmp_file.vim
 "=============================================================
 

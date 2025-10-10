@@ -23,6 +23,8 @@ map [b :bp
 nnoremap <Leader>b :ls t<CR>:b
 nnoremap <leader>bd :bd
 
+nnoremap <leader>t :TmpFile 
+
 " start of line
 :cnoremap <C-A>		<Home>
 " back one character
@@ -125,7 +127,6 @@ let g:fuzzyy_keymaps = {
 \ }
 "===== FUZZY SEARCH =====
 
-
 " alt_l - перезапуск lsp-сервера
 nnoremap l :LSClientRestartServer<CR>
 
@@ -155,6 +156,9 @@ function! s:on_lsp_buffer_enabled() abort
 
     let g:lsp_format_sync_timeout = 1000
     " refer to doc to add more commands
+
+    nmap <buffer> <leader>tiz :LspCallHierarchyIncomingTree
+    nmap <buffer> <leader>toz :LspCallHierarchyOutgoingTree
 endfunction
 
 augroup lsp_install
