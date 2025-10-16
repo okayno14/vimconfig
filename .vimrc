@@ -26,7 +26,12 @@ endif
 
 set t_Co=256
 set termguicolors
-colorscheme catppuccin_mocha
+" colorscheme builder-dark
+
+" let g:BorlandStyle='modern'
+" colorscheme borland
+
+colorscheme hybrid
 
 set encoding=utf-8
 set fileencoding=utf-8
