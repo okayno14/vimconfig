@@ -8,6 +8,7 @@ pkgs.mkShell {
     erlang
     rebar3
     erlang-language-platform
+    erlfmt
   ];
 }
 
