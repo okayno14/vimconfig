@@ -26,7 +26,7 @@ colorscheme catppuccin_mocha
 hi! def link CursorColumn CursorLine
 " vim-lsp
 hi! def link lspReference MatchParen
-call s:hi("LspWarningHighlight", "NONE",  "#F9E2AF", "#45475A", "NONE", "NONE")
+hi! def link LspWarningHighligh SpellCap
 hi LspErrorHighlight term=underline cterm=underline ctermfg=167 ctermbg=52 gui=underline guifg=#cc6666 guibg=#5f0000
 hi! def link lspInlayHintsParameter Label
 
