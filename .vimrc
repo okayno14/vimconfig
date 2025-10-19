@@ -14,6 +14,8 @@ set statusline=%<%y\ %f\ %h%m%r%=%-14.(%l,%c%V%)\ %P\ %{FugitiveStatusline()}
 " COLORS
 " fixes glitch? in colors when using vim with tmux
 set background=dark
+set cursorcolumn
+set cursorline
 
 " You might have to force true color when using regular vim inside tmux as the
 " colorscheme can appear to be grayscale with "termguicolors" option enabled.
