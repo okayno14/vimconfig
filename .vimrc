@@ -28,12 +28,6 @@ endif
 
 set t_Co=256
 set termguicolors
-" colorscheme builder-dark
-
-" let g:BorlandStyle='modern'
-" colorscheme borland
-
-colorscheme hybrid
 
 set encoding=utf-8
 set fileencoding=utf-8
@@ -157,5 +151,6 @@ runtime templates.vim
 runtime dadbod_ui_complete.vim
 runtime fugitive.vim
 runtime tmp_file.vim
+runtime colorscheme.vim
 "=============================================================
 
