@@ -23,7 +23,7 @@ map [b :bp
 nnoremap <Leader>b :ls t<CR>:b
 nnoremap <leader>bd :bd
 
-nnoremap <leader>t :TmpFile 
+nnoremap <leader>t :TmpFile
 
 " start of line
 :cnoremap <C-A>		<Home>
@@ -96,8 +96,8 @@ let g:ctrlp_prompt_mappings = {
     \ 'PrtExit()':            ['<esc>', '<c-c>', '<c-g>'],
 \ }
 
-" fuzzyy
-let g:enable_fuzzyy_keymaps = 0
+" fuzzbox
+let g:enable_fuzzbox_keymaps = 0
 
 " open prompt
 " бесполезный
@@ -105,13 +105,13 @@ let g:enable_fuzzyy_keymaps = 0
 nnoremap <silent> <leader>ff :FuzzyFiles<CR>
 nnoremap <silent> <leader>fb :FuzzyBuffers<CR>
 nnoremap <silent> <leader>fc :FuzzyColors<CR>
-nnoremap <silent> <leader>fd :FuzzyHelps<CR>
+nnoremap <silent> <leader>fd :FuzzyHelp<CR>
 nnoremap <silent> <leader>fi :FuzzyCommands<CR>
 nnoremap <silent> <leader>fr :FuzzyGrep<CR>
 nnoremap <silent> <leader>fh :FuzzyHighlights<CR>
 
 " prompt navigation
-let g:fuzzyy_keymaps = {
+let g:fuzzbox_keymaps = {
 \     'menu_up': ["\<c-p>", "\<Up>"],
 \     'menu_down': ["\<c-n>", "\<Down>"],
 \     'menu_select': ["\<CR>"],

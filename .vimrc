@@ -141,7 +141,7 @@ filetype indent off
 
 runtime ls.vim
 runtime ctrlp.vim
-runtime fuzzyy.vim
+runtime fuzzbox.vim
 runtime maps.vim
 runtime autocmd.vim
 runtime vimwiki.vim
