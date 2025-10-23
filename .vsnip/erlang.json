@@ -34,10 +34,8 @@
         "description": "case",
         "body": [
             "case ${1:expr} of",
-            "    ${2:true} ->",
-            "        ok;",
-            "    ${3:false} ->",
-            "        ok",
+            "    ${2:true} -> ok;",
+            "    ${3:false} -> ok",
             "end${4}"
         ]
     },
