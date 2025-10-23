@@ -44,10 +44,11 @@
         "prefix": "try",
         "description": "try",
         "body": [
-            "try :var of",
-            "    ok",
+            "try ${1:expr} of",
+            "   true -> ok;",
+            "   false -> ok",
             "catch",
-            "    ExceptionType:Reason:ST ->",
+            "    Class:Reason:StackTrace ->",
             "        ok",
             "end"
         ]
