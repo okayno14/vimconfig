@@ -1,3 +1,4 @@
+#! /usr/bin/env escript
 
 main(["init"]) ->
     HomeDir = os:getenv("HOME"),
