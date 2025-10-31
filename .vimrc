@@ -55,17 +55,6 @@ set expandtab
 set shiftwidth=4
 "=============================================================
 
-" netrw
-"=============================================================
-" Открывает Vexplore слева
-let g:netrw_altv=0
-" Уменьшает стандартный размер прводника.
-let g:netrw_winsize = 25
-" Открывает файл системным viewer-ом
-let g:netrw_browsex_viewer='xdg-open'
-" Открывает файл в правом окне, если проводник слева
-let g:netrw_chgwin=2
-
 "vimpager
 "=============================================================
 if !exists('g:vimpager')
@@ -152,5 +141,6 @@ runtime dadbod_ui_complete.vim
 runtime fugitive.vim
 runtime tmp_file.vim
 runtime colorscheme.vim
+runtime netrw_2.vim
 "=============================================================
 
