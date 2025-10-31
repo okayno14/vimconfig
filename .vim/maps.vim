@@ -23,7 +23,7 @@ map [b :bp
 nnoremap <Leader>b :ls t<CR>:b
 nnoremap <leader>bd :bd
 
-nnoremap <leader>t :TmpFile
+nnoremap <leader>t :TmpFile<Space>
 
 " start of line
 :cnoremap <C-A>		<Home>
