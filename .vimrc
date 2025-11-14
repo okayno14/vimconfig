@@ -80,13 +80,7 @@ set autoread
 " search
 set path+=**
 
-" set grepcmd for specific OS
-if (has('win32') || has('win64')) && match(&shell, 'sh')
-        set grepprg=findstr\ /n
-    else
-        " игнорирует содержимое .gitignore
-        set grepprg=ag\ -U\ $*
-endif
+set grepprg=ag\ -U\ $*
 
 " TODO сделать значение по умолчанию %
 " Команда для быстрого поиска todo
