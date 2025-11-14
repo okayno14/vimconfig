@@ -4,9 +4,8 @@ set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁ
 let g:mapleader = ","
 
 nnoremap <leader>s :%s:\<\>:
-nnoremap <leader>fw :grep '\b\b':copenp
-nnoremap <leader>flw :lgrep '\b\b':lopenp
-nnoremap <leader>m :marks QWE<CR>:normal `
+
+nnoremap <leader>t :TmpFile<Space>
 
 " [l]ocation list
 map ]l :lne
@@ -19,11 +18,6 @@ map [q :cp
 " [b]uffer
 map ]b :bn
 map [b :bp
-" open buffer list and select some
-nnoremap <Leader>b :ls t<CR>:b
-nnoremap <leader>bd :bd
-
-nnoremap <leader>t :TmpFile<Space>
 
 " start of line
 :cnoremap <C-A>		<Home>
@@ -96,18 +90,30 @@ let g:ctrlp_prompt_mappings = {
     \ 'PrtExit()':            ['<esc>', '<c-c>', '<c-g>'],
 \ }
 
-" fuzzbox
+" search.vanilla
+nnoremap <leader>ff :find<Space>
+" open buffer list and select some
+nnoremap <Leader>b :ls t<CR>:b<Space>
+nnoremap <leader>bd :bd
+" В зависимости от типа файла может переопределяться
+nnoremap <leader>fr :grep<Space>
+" TODO пусть вставляет содержимое @0
+nnoremap <leader>fw :grep '\b\b':copenp
+nnoremap <leader>fwl :lgrep '\b\b':lopenp
+nnoremap <leader>m :marks QWE<CR>:normal `
+
+" search.fuzzbox
 let g:enable_fuzzbox_keymaps = 0
 
 " open prompt
 " бесполезный
 " nnoremap <silent> <leader>fb :FuzzyInBuffer<CR>
-nnoremap <silent> <leader>ff :FuzzyFiles<CR>
+" nnoremap <silent> <leader>ff :FuzzyFiles<CR>
 nnoremap <silent> <leader>fb :FuzzyBuffers<CR>
 nnoremap <silent> <leader>fc :FuzzyColors<CR>
 nnoremap <silent> <leader>fd :FuzzyHelp<CR>
 nnoremap <silent> <leader>fi :FuzzyCommands<CR>
-nnoremap <silent> <leader>fr :FuzzyGrep<CR>
+" nnoremap <silent> <leader>fr :FuzzyGrep<CR>
 nnoremap <silent> <leader>fh :FuzzyHighlights<CR>
 
 " prompt navigation
