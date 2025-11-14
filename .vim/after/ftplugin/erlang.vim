@@ -1,5 +1,7 @@
 set path=
 set path+=apps/**
+set path+=elixir_libs/**
+set path+=src/**
 set path+=_build/default/lib/**
 
 set textwidth=0
