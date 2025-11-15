@@ -7,21 +7,27 @@ let g:vimwiki_folding='syntax'
 
 " TODO пихнуть в команду
 function HandleLastWeekWikiFiles()
-    let files = LastWeekWikiFiles()
+    let buffer = 'test'
+    let job =
+    \ LastWeekWikiFilesCMD0()
+    \ ->split()
+    \ ->job_start({'out_io': 'buffer', 'out_name': buffer, 'timeout': 1800000})
+    " сплитануть окно, открыть буфер, прыгнуть обратно
     wincmd s
-    " TODO надо сделать фейк-буфер без сохранения на диск (может быть тот же preview-window)
-    exe 'e ' . tempname()
-    call setline(1, files)
-    w
+    exe 'b ' . buffer
+    wincmd p
+    return job
 endfunction
 
-function LastWeekWikiFiles()
-    let wiki_nr = vimwiki#vars#get_bufferlocal('wiki_nr')
-    return LastWeekWikiFiles_1(get(g:vimwiki_wikilocal_vars[wiki_nr], 'path'))
+function LastWeekWikiFilesCMD0()
+    return
+    \ g:vimwiki_wikilocal_vars
+    \ ->get(vimwiki#vars#get_bufferlocal('wiki_nr'))
+    \ ->get('path')
+    \ ->LastWeekWikiFilesCMD1()
 endfunction
 
-" TODO надо сделать фоновой джобой
-function LastWeekWikiFiles_1(path)
-    return systemlist('find ' . a:path . ' -type f -name ''*.md'' -mtime -6')
+function LastWeekWikiFilesCMD1(path)
+    return 'find ' . a:path . ' -type f -name *.md -mtime -6'
 endfunction
 
