@@ -5,11 +5,12 @@ let g:vimwiki_list = [
 
 let g:vimwiki_folding='syntax'
 
-" TODO пихнуть в команду
-function HandleLastWeekWikiFiles()
+command LastWeekWikiFiles call s:HandleLastWeekWikiFiles()
+
+function s:HandleLastWeekWikiFiles()
     let buffer = 'test'
     let job =
-    \ LastWeekWikiFilesCMD0()
+    \ s:LastWeekWikiFilesCMD0()
     \ ->split()
     \ ->job_start({'out_io': 'buffer', 'out_name': buffer, 'timeout': 1800000})
     " сплитануть окно, открыть буфер, прыгнуть обратно
@@ -19,15 +20,15 @@ function HandleLastWeekWikiFiles()
     return job
 endfunction
 
-function LastWeekWikiFilesCMD0()
+function s:LastWeekWikiFilesCMD0()
     return
     \ g:vimwiki_wikilocal_vars
     \ ->get(vimwiki#vars#get_bufferlocal('wiki_nr'))
     \ ->get('path')
-    \ ->LastWeekWikiFilesCMD1()
+    \ ->s:LastWeekWikiFilesCMD1()
 endfunction
 
-function LastWeekWikiFilesCMD1(path)
+function s:LastWeekWikiFilesCMD1(path)
     return 'find ' . a:path . ' -type f -name *.md -mtime -6'
 endfunction
 
