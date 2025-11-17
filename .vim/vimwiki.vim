@@ -8,7 +8,7 @@ let g:vimwiki_folding='syntax'
 command LastWeekWikiFiles call s:HandleLastWeekWikiFiles()
 
 function s:HandleLastWeekWikiFiles()
-    let buffer = 'test'
+    let buffer = 'last_week_wiki_files'
     let job =
     \ s:LastWeekWikiFilesCMD0()
     \ ->split()
