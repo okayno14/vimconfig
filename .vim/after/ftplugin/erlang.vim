@@ -1,16 +1,7 @@
-set path=
-set path+=apps/**
-set path+=elixir_libs/**
-set path+=src/**
-set path+=config/**
-set path+=env/**
-set path+=_build/default/lib/**
-
 set textwidth=0
 
 set formatprg=erlfmt\ --print-width\ 85\ -
 set makeprg=env\ TERM=dumb\ rebar3\ compile
-set grepprg=ag\ -U\ $*\ apps/\ elixir_libs/\ src/\ _build/default/lib/\ config/\ env/
 
 " Фишка в том, что при работе с vim-slime нет автодополнения.
 " vim-lsc инициализируется тогда, когда видит, что открыт файл с нужным
@@ -53,7 +44,7 @@ endfunction
 command -nargs=1 -bar Deps grep '\b<args>\b,' -G '.*\.app\.src$' | copen
 command -nargs=1 -bar Depsl lgrep '\b<args>\b,' -G '.*\.app\.src$' | lopen
 
-nnoremap <leader>fr :grep --erl --elixir<Space>
+nnoremap <leader>fr :grep --erl <Space>
 
 runtime after/ftplugin/erl_fold.vim
 
