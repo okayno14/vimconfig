@@ -10,6 +10,7 @@ set textwidth=0
 
 set formatprg=erlfmt\ --print-width\ 85\ -
 set makeprg=env\ TERM=dumb\ rebar3\ compile
+set grepprg=ag\ -U\ $*\ apps/\ elixir_libs/\ src/\ _build/default/lib/\ config/\ env/
 
 " Фишка в том, что при работе с vim-slime нет автодополнения.
 " vim-lsc инициализируется тогда, когда видит, что открыт файл с нужным
