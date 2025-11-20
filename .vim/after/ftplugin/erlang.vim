@@ -53,7 +53,7 @@ endfunction
 command -nargs=1 -bar Deps grep '\b<args>\b,' -G '.*\.app\.src$' | copen
 command -nargs=1 -bar Depsl lgrep '\b<args>\b,' -G '.*\.app\.src$' | lopen
 
-nnoremap <leader>fr :grep --erl<Space>
+nnoremap <leader>fr :grep --erl --elixir<Space>
 
 runtime after/ftplugin/erl_fold.vim
 
