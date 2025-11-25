@@ -38,12 +38,6 @@ map [b :bp
 " forward one word (<A-B>)
 :cnoremap b	        <S-Left>
 
-" simple-commenter
-let g:scomment_default_mapping = 0
-map  <leader>c <Plug>(do-comment)
-map  <leader>C <Plug>(un-comment)
-map  ,,        <Plug>(one-line-comment)
-
 "===== FUZZY SEARCH =====
 
 " ctrlp
