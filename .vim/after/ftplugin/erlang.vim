@@ -3,10 +3,18 @@ set textwidth=0
 set formatprg=erlfmt\ --print-width\ 85\ -
 set makeprg=env\ TERM=dumb\ rebar3\ compile
 
-set path=
-set path+=apps/**
-set path+=src/**
-set path+=_build/default/lib/**
+function s:SetPath()
+    set path=
+    set path+=apps/**
+    set path+=src/**
+    set path+=_build/default/lib/**
+endfunction
+
+if exists('g:erlang_custom_path')
+    call SetErlangCustomPath()
+else
+    call s:SetPath()
+endif
 
 " Фишка в том, что при работе с vim-slime нет автодополнения.
 " vim-lsc инициализируется тогда, когда видит, что открыт файл с нужным
