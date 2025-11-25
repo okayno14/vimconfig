@@ -12,6 +12,7 @@ function SetErlangCustomPath()
     set path+=apps/**
     set path+=elixir_libs/**
     set path+=src/**
+    set path+=deps/**
     set path+=_build/default/lib/**
     set path+=config/**
     set path+=env/**
