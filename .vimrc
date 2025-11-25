@@ -136,5 +136,6 @@ runtime fugitive.vim
 runtime tmp_file.vim
 runtime colorscheme.vim
 runtime netrw_2.vim
+packadd cfilter
 "=============================================================
 
