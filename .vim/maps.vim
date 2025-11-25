@@ -4,8 +4,9 @@ set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁ
 let g:mapleader = ","
 
 nnoremap <leader>s :%s:\<\>:
-
 nnoremap <leader>t :TmpFile<Space>
+nnoremap <leader>q :call ToggleQuickfix()<CR>
+nnoremap <leader>l :call ToggleLocationList()<CR>
 
 " [l]ocation list
 map ]l :lne
@@ -167,6 +168,23 @@ augroup lsp_install
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
     call vsnip_integ#integration#vimlsp#attach()
 augroup END
+
+function! ToggleQuickfix()
+    if empty(filter(getwininfo(), 'v:val.quickfix'))
+        copen
+    else
+        cclose
+    endif
+endfunction
+
+function! ToggleLocationList()
+    if empty(filter(getwininfo(), 'v:val.loclist'))
+        lopen
+    else
+        lclose
+    endif
+
+endfunction
 
 " git (fugitive) macros
 nnoremap gb :Git blame<CR>w
