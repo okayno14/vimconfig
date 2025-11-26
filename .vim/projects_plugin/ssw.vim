@@ -16,9 +16,10 @@ function SetErlangCustomPath()
     set path+=_build/default/lib/**
     set path+=config/**
     set path+=env/**
+
+    set grepprg=ag\ -U\ $*\ apps/\ elixir_libs/\ src/\ deps/\ _build/default/lib/\ config/\ env/
 endfunction
 
-set grepprg=ag\ -U\ $*\ apps/\ elixir_libs/\ src/\ _build/default/lib/\ config/\ env/
 
 nnoremap <leader>fr :grep --erl --elixir<Space>
 

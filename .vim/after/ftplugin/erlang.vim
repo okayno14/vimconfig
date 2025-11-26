@@ -8,6 +8,8 @@ function s:SetPath()
     set path+=apps/**
     set path+=src/**
     set path+=_build/default/lib/**
+
+    set grepprg=ag\ -U\ $*\ apps/\ src/\ _build/default/lib/
 endfunction
 
 if exists('g:erlang_custom_path')
