@@ -39,6 +39,13 @@ endfunction
 
 packadd unused
 
+com! LspRestartServer call s:lsp_restart_server()
+
+function s:lsp_restart_server()
+    LspStopServer
+    e
+endfunction
+
 com! LspCallHierarchyIncomingTree  call lsp#call_hierarchy_tree#show(v:false)
 com! LspCallHierarchyOutgoingTree  call lsp#call_hierarchy_tree#show(v:true)
 
