@@ -82,6 +82,15 @@ set path+=**
 
 set grepprg=ag\ -U\ $*
 
+command -nargs=* -complete=file Grep call s:grep_specific_path(<f-args>)
+
+function s:grep_specific_path(query, path)
+    let s:grep_old = &grepprg
+    set grepprg=ag\ -U\ $*
+    execute ':grep ' . a:query . ' ' . a:path
+    let &grepprg=s:grep_old
+endfunction
+
 " TODO сделать значение по умолчанию %
 " Команда для быстрого поиска todo
 command -nargs=1 -bar Todo grep --vimgrep todo '<args>'
