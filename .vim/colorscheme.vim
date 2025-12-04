@@ -1,4 +1,3 @@
-
 function! s:hi(group, guisp, guifg, guibg, gui, cterm)
   let cmd = ""
   if a:guisp != ""
@@ -21,13 +20,14 @@ function! s:hi(group, guisp, guifg, guibg, gui, cterm)
   endif
 endfunction
 
-colorscheme catppuccin_mocha
+colorscheme catppuccin-mocha
 
-hi! def link CursorColumn CursorLine
+" hi! def link CursorColumn CursorLine
+
 " vim-lsp
-hi! def link lspReference MatchParen
+" hi! def link lspReference MatchParen
 " call s:hi("LspWarningHighlight", "NONE",  "#F9E2AF", "#45475A", "NONE", "NONE")
-hi LspWarningHighlight term=underline cterm=underline ctermfg=167 ctermbg=52 gui=underline guifg=#f9e2af guibg=#45475a
-hi LspErrorHighlight term=underline cterm=underline ctermfg=167 ctermbg=52 gui=underline guifg=#cc6666 guibg=#5f0000
-hi! def link lspInlayHintsParameter Label
+" hi LspWarningHighlight term=underline cterm=underline ctermfg=167 ctermbg=52 gui=underline guifg=#f9e2af guibg=#45475a
+" hi LspErrorHighlight term=underline cterm=underline ctermfg=167 ctermbg=52 gui=underline guifg=#cc6666 guibg=#5f0000
+" hi! def link lspInlayHintsParameter Label
 

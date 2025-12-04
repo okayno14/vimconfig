@@ -67,3 +67,6 @@
 [submodule ".vim/pack/w0ng/start/vim-hybrid"]
 	path = .vim/pack/w0ng/start/vim-hybrid
 	url = https://github.com/w0ng/vim-hybrid.git
+[submodule ".vim/pack/catppucin/start/catppucin"]
+	path = .vim/pack/catppucin/start/catppucin
+	url = https://github.com/catppuccin/nvim.git
