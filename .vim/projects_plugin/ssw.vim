@@ -1,5 +1,3 @@
-set makeprg=./bu\ node\ co\ re\ async\ ntc\ no-color\ with-tests
-
 let g:fuzzbox_files_ignore_file = ['*.beam', '*.so', '*.exe', '*.dll', '*.dump', '*.core', '*.swn', '*.swp']
 let g:fuzzbox_files_ignore_dir = ['.git', '.hg', '.svn', '.rebar', '.eunit', 'ecss-node']
 
@@ -17,6 +15,10 @@ function SetErlangCustomPath()
     set grepprg=ag\ -U\ $*\ apps/\ elixir_libs/\ src/\ deps/\ _build/default/lib/\ config/\ env/
 endfunction
 
+" коллбэк (вызовется в ~/.vim/after/erlang.vim)
+function SetMakeprg()
+    set makeprg=./bu\ node\ co\ re\ async\ ntc\ no-color\ with-tests
+endfunction
 
 nnoremap <leader>fr :grep --erl --elixir<Space>
 
