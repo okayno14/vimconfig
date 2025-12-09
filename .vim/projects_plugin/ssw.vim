@@ -3,10 +3,7 @@ set makeprg=./bu\ node\ co\ re\ async\ ntc\ no-color\ with-tests
 let g:fuzzbox_files_ignore_file = ['*.beam', '*.so', '*.exe', '*.dll', '*.dump', '*.core', '*.swn', '*.swp']
 let g:fuzzbox_files_ignore_dir = ['.git', '.hg', '.svn', '.rebar', '.eunit', 'ecss-node']
 
-" флаг, который говорит, что нужно использовать SetErlangCustomPath
-let g:erlang_custom_path = v:true
-
-" функция, которая проставляет &path
+" коллбэк, который проставляет &path (вызовется в ~/.vim/after/erlang.vim)
 function SetErlangCustomPath()
     set path=
     set path+=apps/**
