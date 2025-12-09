@@ -1,3 +1,6 @@
+if has('nvim')
+    finish
+endif
 
 function! s:hi(group, guisp, guifg, guibg, gui, cterm)
   let cmd = ""
