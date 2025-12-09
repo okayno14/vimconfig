@@ -31,7 +31,6 @@ set termguicolors
 
 set encoding=utf-8
 set fileencoding=utf-8
-set termencoding=utf-8
 
 " other
 set nowrap
@@ -109,7 +108,8 @@ set directory=$VIMHOME/swp//
 
 " diff
 "=============================================================
-set diffopt=inline:word,iwhite,filler,internal,closeoff,algorithm:myers,context:5,linematch:100,indent-heuristic,anchor
+" set diffopt=inline:word,iwhite,filler,internal,closeoff,algorithm:myers,context:5,linematch:100,indent-heuristic,anchor
+set diffopt=iwhite,filler,internal,closeoff,algorithm:myers,context:5,linematch:100,indent-heuristic
 
 " utils
 "=============================================================
