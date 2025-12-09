@@ -21,5 +21,16 @@
 " Проблема метода:
 " * dd по объектам не всегда работает;
 
-command -nargs=+ GCompare Git difftool --name-only <args>
+command -nargs=+ GCompare call s:g_compare(<f-args>)
+command -nargs=0 GCompareDiffSplit call s:g_diffsplit()
+
+function s:g_compare(branch_b)
+    exec 'Git difftool --name-only ' . a:branch_b
+    let g:g_compare_branch_b = a:branch_b
+endfunction
+
+" TODO может как-то автоматизировать? Тогда будет базированный аналог diffview
+function s:g_diffsplit()
+    exec 'Gdiffsplit ' . g:g_compare_branch_b
+endfunction
 
