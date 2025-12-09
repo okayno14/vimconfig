@@ -92,9 +92,8 @@ nnoremap <Leader>b :ls t<CR>:b<Space>
 nnoremap <leader>bd :bd
 " В зависимости от типа файла может переопределяться
 nnoremap <leader>fr :grep<Space>
-" TODO пусть вставляет содержимое @0
-nnoremap <leader>fw :grep '\b\b':copenp
-nnoremap <leader>fwl :lgrep '\b\b':lopenp
+nnoremap <leader>fw :grep '\b0\b'<Space>
+nnoremap <leader>fwl :lgrep '\b0\b'<Space>
 nnoremap <leader>m :marks QWE<CR>:normal `
 
 " search.fuzzbox
