@@ -1,8 +1,9 @@
 set textwidth=0
 
 set formatprg=erlfmt\ --print-width\ 85\ -
-set makeprg=env\ TERM=dumb\ rebar3\ compile
 
+" Добавлено, т.к. $VIM/ftplugin/erlang.vim выставляет свои значения. Я хочу их
+" переопределить в рамках проекта
 function s:SetPath()
     set path=
     set path+=apps/**
@@ -12,10 +13,22 @@ function s:SetPath()
     set grepprg=ag\ -U\ $*\ apps/\ src/\ _build/default/lib/
 endfunction
 
-if exists('g:erlang_custom_path')
+" Добавлено, т.к. $VIM/ftplugin/erlang.vim выставляет свои значения. Я хочу их
+" переопределить в рамках проекта
+function s:SetMakeprg()
+    set makeprg=env\ TERM=dumb\ rebar3\ compile
+endfunction
+
+if exists('*SetErlangCustomPath')
     call SetErlangCustomPath()
 else
     call s:SetPath()
+endif
+
+if exists('*SetMakeprg')
+    call SetMakeprg()
+else
+    call s:SetMakeprg()
 endif
 
 " Фишка в том, что при работе с vim-slime нет автодополнения.
