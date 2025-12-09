@@ -143,7 +143,7 @@ runtime templates.vim
 runtime dadbod_ui_complete.vim
 runtime fugitive.vim
 runtime tmp_file.vim
-runtime colorscheme.vim
+runtime colorscheme/colorscheme.vim
 runtime netrw_2.vim
 packadd cfilter
 packadd matchit
