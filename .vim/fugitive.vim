@@ -14,6 +14,10 @@ command -nargs=+ GCompareWithCheckout call s:g_compare_2_checkout(<f-args>)
 " Вызов diffsplit для ранее определённой пары буферов
 command -nargs=0 GCompareDiffSplit call s:g_diffsplit()
 
+command -nargs=0 GFileHistory Gclog %
+
+command -nargs=+ GFileCompare call s:g_file_compare(<f-args>)
+
 function s:g_compare_2(branch, ...)
     " Если нет второго аргумента
     if get(a:, 1, "default2") == "default2"
@@ -52,6 +56,20 @@ function s:g_compare_2_checkout(branch, ...)
     exec 'Git difftool --name-only ' . branch_old
     let g:g_compare_branch_old = branch_old
     let g:g_compare_branch_new = branch_new
+endfunction
+
+function s:g_file_compare(branch, ...)
+    " Если нет второго аргумента
+    if get(a:, 1, "default2") == "default2"
+        let branch_old = FugitiveHead()
+        let branch_new = a:branch
+    " Есть оба аргумента
+    else
+        let branch_old = a:branch
+        let branch_new = get(a:, 1, "default2")
+    endif
+
+    exec 'Gclog ' . branch_old . ' ' . branch_new . ' ' . '%'
 endfunction
 
 function s:g_diffsplit()
