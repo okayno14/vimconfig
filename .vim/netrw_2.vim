@@ -27,6 +27,9 @@ function! NetrwMapping()
         " netrw_chgwin.
         " Кроме случая, когда pwd - подпапка в /tmp
         nmap <buffer> ff %
+        " Странно работает netrw-cmd: меняет только локальный pwd. Поправил на
+        " глобальный.
+        nmap <buffer> cd :exe ':cd ' . b:netrw_curdir
     else
     " TODO добавить переход на активное окно и открытие того же буфера
     " Не работает при g:netrw_liststyle = 3 (дерево файлов)
