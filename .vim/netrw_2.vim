@@ -34,7 +34,7 @@ function SaveFileaAndQuit()
 endfunction
 
 function EditParentFile()
-    let l = split(@%, "/")
+    let l = split(expand('%:p'), "/")
     let l = l[0:-2]
     let cmd = "e " . "/" . join(l, "/")
     execute(cmd)
