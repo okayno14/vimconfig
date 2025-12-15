@@ -22,9 +22,15 @@ nnoremap <leader>dd :Lexplore %:p:h<CR>
 nnoremap <Leader>da :Lexplore<CR>
 
 function! NetrwMapping()
+    if has('nvim')
+        " В neovim netrw-% работает нормально: файл создаётся и открывается в
+        " netrw_chgwin
+        nmap <buffer> ff %
+    else
     " TODO добавить переход на активное окно и открытие того же буфера
     " Не работает при g:netrw_liststyle = 3 (дерево файлов)
     nmap <buffer> ff :call SaveFileaAndQuit()
+    endif
 endfunction
 
 function SaveFileaAndQuit()
