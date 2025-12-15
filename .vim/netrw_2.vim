@@ -24,7 +24,8 @@ nnoremap <Leader>da :Lexplore<CR>
 function! NetrwMapping()
     if has('nvim')
         " В neovim netrw-% работает нормально: файл создаётся и открывается в
-        " netrw_chgwin
+        " netrw_chgwin.
+        " Кроме случая, когда pwd - подпапка в /tmp
         nmap <buffer> ff %
     else
     " TODO добавить переход на активное окно и открытие того же буфера
