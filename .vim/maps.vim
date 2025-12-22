@@ -88,7 +88,8 @@ let g:ctrlp_prompt_mappings = {
 " search.vanilla
 nnoremap <leader>ff :find<Space>
 " open buffer list and select some
-nnoremap <leader>b :ls t<CR>:sb<Space>
+nnoremap <leader>b :ls t<CR>:b<Space>
+nnoremap <leader>sb :ls t<CR>:sb<Space>
 nnoremap <leader>bd :bd
 " В зависимости от типа файла может переопределяться
 nnoremap <leader>fr :grep<Space>
