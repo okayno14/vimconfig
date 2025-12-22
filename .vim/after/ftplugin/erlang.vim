@@ -1,3 +1,6 @@
+set suffixesadd+=.erl
+set suffixesadd+=.ex
+
 set textwidth=0
 
 set formatprg=erlfmt\ --print-width\ 85\ -
