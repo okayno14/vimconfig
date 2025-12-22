@@ -152,6 +152,12 @@ set diffopt=inline:word,iwhite,filler,internal,closeoff,algorithm:myers,context:
 "=============================================================
 set switchbuf=useopen,usetab
 
+command -nargs=1 RenameBuffer call s:rename_bufer(<f-args>)
+
+function s:rename_bufer(name)
+    0f
+    exec 'file '.a:name
+endfunction
 
 function AbsPath()
     return getcwd() . '/' . @%
