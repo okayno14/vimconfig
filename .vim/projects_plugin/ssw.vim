@@ -7,8 +7,12 @@ function SetErlangCustomPath()
     set path+=apps/**
     set path+=elixir_libs/**
     set path+=src/**
+    " депсы в rebar1
     set path+=deps/**
+    " депсы в rebar3
     set path+=_build/default/lib/**
+    " депсы в 3.18 (mix)
+    set path+=_deps/**
     set path+=config/**
     set path+=env/**
 
