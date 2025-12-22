@@ -150,6 +150,8 @@ set diffopt=inline:word,iwhite,filler,internal,closeoff,algorithm:myers,context:
 
 " utils
 "=============================================================
+set switchbuf=useopen,usetab
+
 
 function AbsPath()
     return getcwd() . '/' . @%
