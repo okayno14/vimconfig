@@ -190,6 +190,7 @@ endfunction
 
 " git (fugitive) macros
 nnoremap gb :Git blame<CR>w
+nnoremap gbb :Git branch<CR>
 " для сравнения с индексом
 nnoremap gd :Gdiffsplit<CR>
 " для merge-конфликтов
