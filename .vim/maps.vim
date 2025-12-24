@@ -91,6 +91,7 @@ nnoremap <leader>ff :find<Space>
 nnoremap <leader>b :ls t<CR>:b<Space>
 nnoremap <leader>sb :ls t<CR>:sb<Space>
 nnoremap <leader>bd :bd
+nnoremap <leader>bD :bd!
 " В зависимости от типа файла может переопределяться
 nnoremap <leader>fr :grep<Space>
 nnoremap <leader>fw :grep '\b0\b'<Space>
