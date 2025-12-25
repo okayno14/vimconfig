@@ -13,7 +13,7 @@ function s:SetPath()
     set path+=src/**
     set path+=_build/default/lib/**
 
-    set grepprg=ag\ -U\ $*\ apps/\ src/\ _build/default/lib/
+    call GrepprgFromPath()
 endfunction
 
 " Добавлено, т.к. $VIM/ftplugin/erlang.vim выставляет свои значения. Я хочу их

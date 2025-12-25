@@ -16,7 +16,7 @@ function SetErlangCustomPath()
     set path+=config/**
     set path+=env/**
 
-    set grepprg=ag\ -U\ $*\ apps/\ elixir_libs/\ src/\ deps/\ _build/default/lib/\ config/\ env/
+    call GrepprgFromPath()
 endfunction
 
 " коллбэк (вызовется в ~/.vim/after/erlang.vim)

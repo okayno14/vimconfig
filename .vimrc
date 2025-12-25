@@ -119,6 +119,16 @@ set path+=**
 
 set grepprg=ag\ -U\ $*
 
+" Позволяет указать grepprg с теми же путями, что и в path.
+" Полезно для программных проектов, в которых надо искать по исходникам.
+function GrepprgFromPath()
+    let paths =
+    \ split(&path, ",")
+    \ ->join(" ")
+
+    let &grepprg = "ag -U $* ".paths
+endfunction
+
 command -nargs=* -complete=file Grep call s:grep_specific_path(<f-args>)
 
 function s:grep_specific_path(query, path)
