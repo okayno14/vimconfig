@@ -8,6 +8,9 @@ nnoremap <leader>t :TmpFile<Space>
 nnoremap <leader>q :call ToggleQuickfix()<CR>
 nnoremap <leader>l :call ToggleLocationList()<CR>
 
+" Позволяет выделить недавно вставленный/скопированный текст
+nnoremap <leader>gv v`[o`]
+
 " [l]ocation list
 map ]l :lne
 map [l :lp
