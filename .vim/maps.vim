@@ -91,8 +91,7 @@ let g:ctrlp_prompt_mappings = {
 " search.vanilla
 nnoremap <leader>ff :find<Space>
 " open buffer list and select some
-nnoremap <leader>b :ls t<CR>:b<Space>
-nnoremap <leader>sb :ls t<CR>:sb<Space>
+nnoremap <Leader>b :ls t<CR>:b<Space>
 nnoremap <leader>bd :bd
 nnoremap <leader>bD :bd!
 " В зависимости от типа файла может переопределяться
@@ -136,7 +135,6 @@ let g:fuzzbox_keymaps = {
 nnoremap l :LSClientRestartServer<CR>
 
 function! s:on_lsp_buffer_enabled() abort
-    setlocal tagfunc=lsp#tagfunc
     setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
     if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
