@@ -7,7 +7,7 @@ let g:netrw_browsex_viewer='xdg-open'
 " Открывает файл в правом окне, если проводник слева
 let g:netrw_chgwin=2
 
-let g:netrw_preview   = 1
+let g:netrw_preview = 1
 
 augroup netrw_mapping
 	" :if !exists("autocommands_loaded")
@@ -25,6 +25,7 @@ function! NetrwMapping()
     " TODO добавить переход на активное окно и открытие того же буфера
     " Не работает при g:netrw_liststyle = 3 (дерево файлов)
     nmap <buffer> ff :call SaveFileaAndQuit()
+    nmap <buffer> x :call NetrwOpenFileName()
 endfunction
 
 function SaveFileaAndQuit()
@@ -38,5 +39,26 @@ function EditParentFile()
     let l = l[0:-2]
     let cmd = "e " . "/" . join(l, "/")
     execute(cmd)
+endfunction
+
+function NetrwOpenFileName()
+    let dir = b:netrw_curdir
+    let file =
+    \ getline('.')
+    \ ->trim('*', 2)
+    call OpenFileName(dir.'/'.file)
+endfunction
+
+function OpenFileName(file)
+    exec "!xdg-open ".EscapeFileName(a:file)."&"
+endfunction
+
+function EscapeFileName(file)
+    return
+    \ []
+    \ ->add("'")
+    \ ->add(escape(a:file, " "))
+    \ ->add("'")
+    \ ->join("")
 endfunction
 
