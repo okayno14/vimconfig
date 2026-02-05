@@ -1,6 +1,6 @@
 " Посмотреть последовательный ренж коммитов (MR).
 " Складирует все изменённые файлы между branch_old branch_new в quickfix
-" Потом на выбранном файле нужно вызвать GCompareDiffSplit (или нажать dd)
+" Потом на выбранном файле нужно вызвать GCompareDiffSplit (или нажать dd (не всегда работает))
 " Минус - будем работать с fugitive-объектами а не буфером, т.е. нельзя ничего
 " поменять, посмотреть.
 command -nargs=+ GCompare call s:g_compare_2(<f-args>)
@@ -34,7 +34,11 @@ function s:g_compare_2(branch, ...)
     let g:g_compare_branch_new = branch_new
 endfunction
 
+" TODO всё равно надо вызвать, даже если зачекаутился
 " TODO надо удалить дубль с парсингом аргументов
+" Аргументы:
+" либо: branch_new - сделает чекаут на branch_new
+" либо: branch_old, branch_new
 function s:g_compare_2_checkout(branch, ...)
     " Если нет второго аргумента
     if get(a:, 1, "default2") == "default2"
