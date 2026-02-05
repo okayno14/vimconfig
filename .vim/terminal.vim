@@ -3,6 +3,8 @@ if !has('nvim')
 endif
 
 tnoremap <expr> <C-R>p '<C-\><C-N>"'.nr2char(getchar()).'pi'
+nmap <leader>tt :ls Rt<cr>:b<space>
+
 command -nargs=0 ClearHist call s:clear_hist()
 
 function s:clear_hist()
