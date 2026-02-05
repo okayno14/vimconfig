@@ -129,12 +129,13 @@ function GrepprgFromPath()
     let &grepprg = "ag -U $* ".paths
 endfunction
 
-command -nargs=* -complete=file Grep call s:grep_specific_path(<f-args>)
+command -complete=dir -nargs=* Grep call s:grep_specific_path(<f-args>)
 
-function s:grep_specific_path(query, path)
+function s:grep_specific_path(...)
     let s:grep_old = &grepprg
     set grepprg=ag\ -U\ $*
-    execute ':grep ' . a:query . ' ' . a:path
+    " a:000 - список строк с аргументами из команды
+    execute ':grep ' . join(a:000)
     let &grepprg=s:grep_old
 endfunction
 
