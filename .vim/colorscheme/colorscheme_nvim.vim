@@ -21,7 +21,7 @@ function! s:hi(group, guisp, guifg, guibg, gui, cterm)
   endif
 endfunction
 
-colorscheme catppuccin-mocha
+colorscheme caret
 
 hi! def link CursorColumn CursorLine
 hi LspWarningHighlight term=underline cterm=underline ctermfg=167 ctermbg=52 gui=underline guifg=#f9e2af guibg=#45475a
