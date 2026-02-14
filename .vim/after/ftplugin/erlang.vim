@@ -78,4 +78,5 @@ command -nargs=1 -bar Depsl lgrep '\b<args>\b,' -G '.*\.app\.src$' | lopen
 nnoremap <leader>fr :grep --erl <Space>
 
 runtime after/ftplugin/erl_fold.vim
+runtime after/plugin/no_auto_comments.vim
 
