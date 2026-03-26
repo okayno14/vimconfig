@@ -4,6 +4,8 @@ set suffixesadd+=.ex
 set textwidth=0
 set colorcolumn=85
 set formatprg=erlfmt\ --print-width\ 85\ -
+" Для отображения trailing spaces
+set list
 
 " Добавлено, т.к. $VIM/ftplugin/erlang.vim выставляет свои значения. Я хочу их
 " переопределить в рамках проекта
