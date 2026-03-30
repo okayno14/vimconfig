@@ -1,3 +1,3 @@
 autocmd CursorHold,CursorHoldI * checktime
-autocmd BufWritePre * TsDel
+autocmd BufWritePre * retab | TsDel
 autocmd BufNewFile,BufReadPost * call TurnOffAutoComments()
