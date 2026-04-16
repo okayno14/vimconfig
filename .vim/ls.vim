@@ -15,6 +15,17 @@ au User lsp_setup call lsp#register_server({
     \ 'allowlist': ['gleam'],
     \ })
 
+au User lsp_setup call lsp#register_server({
+    \ 'name': 'elixir',
+    \ 'cmd': ['elixir-ls'],
+    \ 'allowlist': ['elixir'],
+    \ })
+
+" Logs
+" let g:lsp_show_message_log_level='info'
+" let g:lsp_log_file = expand('~/vim-lsp.log')
+" let g:lsp_log_verbose = 1
+
 let g:lsp_semantic_enabled = 1
 
 let g:lsp_diagnostics_virtual_text_enabled = 0
