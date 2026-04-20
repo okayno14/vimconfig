@@ -1,5 +1,8 @@
-set shiftwidth=2
-set tabstop=2
+setlocal shiftwidth=2
+setlocal tabstop=2
+setlocal textwidth=0
+setlocal formatprg=mix\ format\ -
+setlocal foldmethod=syntax
 
-nnoremap <leader>fr :grep --elixir <Space>
+nnoremap <buffer> <leader>fr :grep --elixir <Space>
 
