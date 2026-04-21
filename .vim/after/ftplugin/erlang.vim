@@ -73,9 +73,12 @@ function Foo1()
     normal %%l
 endfunction
 
-" TODO можно передавать count, чтобы можно было выбирать результат поиска
-function GoToFile()
+" Делаем глобально, чтобы работало в терминальном буфере
+nnoremap gF :<C-u>call GoToFile(v:count)<CR>
+
+function GoToFile(...)
     let oldpos = getpos(".")
+    let count = get(a:, 0, 1)
     try
     normal viW
         let selection_text_list = getregion(getpos("v"), getpos("."))
@@ -91,11 +94,11 @@ function GoToFile()
     let file = get(list, 0, "")
     let line = get(list, 1, "")
     if file == "" || line == ""
-            throw "not module:line"
+        throw "not module:line"
     endif
-    let file = findfile(file, &path, 1)
+    let file = findfile(file, &path, count)
     if file == ""
-            throw "no file"
+        throw "no file"
     endif
     execute "buffer " . bufadd(file)
     call setcursorcharpos(line, 1)
