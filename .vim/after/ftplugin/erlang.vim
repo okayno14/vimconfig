@@ -100,6 +100,7 @@ function GoToFile(...)
         endif
         let list =
         \ l:selection_text
+        \ ->trim('[]', 1)
         \ ->substitute(':[a-z_]\+/[0-9]\+','','')
         \ ->split(':')
         let file = get(list, 0, "")
