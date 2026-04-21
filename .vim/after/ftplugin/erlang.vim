@@ -112,9 +112,15 @@ function GoToFile(...)
         if file == ""
             throw "no file"
         endif
-        execute "buffer " . bufadd(file)
+        let bufnr = bufadd(file)
+        " Надо, чтобы при наличии swap-файла ошибка не помешала функции
+        " доработать
+        silent! call bufload(bufnr)
+        execute "b " . bufnr
         call setcursorcharpos(line, 1)
     catch
+        " Отображает содержимое ошибки, оставил для дебага
+        " echom v:exception
         call setpos(".", oldpos)
     endtry
 endfunction
