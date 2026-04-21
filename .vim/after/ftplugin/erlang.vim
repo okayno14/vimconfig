@@ -85,9 +85,9 @@ function Foo1()
 endfunction
 
 " Делаем глобально, чтобы работало в терминальном буфере
-nnoremap gF :<C-u>call GoToFile(v:count)<CR>
+nnoremap gF :<C-u>call <SID>GoToFile(v:count)<CR>
 
-function GoToFile(...)
+function s:GoToFile(...)
     let oldpos = getpos(".")
     let count = get(a:, 0, 1)
     try
