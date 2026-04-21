@@ -75,39 +75,33 @@ endfunction
 
 " TODO можно передавать count, чтобы можно было выбирать результат поиска
 function GoToFile()
-    " get selection
-    " надо запомнить предыдущее положение курсора (в случае отказа, чтобы
-    " корректно откатиться)
+    let oldpos = getpos(".")
+    try
     normal viW
-    let selection_text_list = getregion(getpos('v'), getpos('.'))
+        let selection_text_list = getregion(getpos("v"), getpos("."))
     normal 
-
     let l:selection_text = get(selection_text_list, 0, "")
     if selection_text == ""
-        return 1
+            throw "no text"
     endif
-
     let list =
     \ l:selection_text
     \ ->substitute(':[a-z_]\+/[0-9]\+','','')
     \ ->split(':')
-
     let file = get(list, 0, "")
     let line = get(list, 1, "")
-
     if file == "" || line == ""
-        return 1
+            throw "not module:line"
     endif
-
     let file = findfile(file, &path, 1)
-    echom file
-
     if file == ""
-        return 1
+            throw "no file"
     endif
-
     execute "buffer " . bufadd(file)
     call setcursorcharpos(line, 1)
+    catch
+        call setpos(".", oldpos)
+    endtry
 endfunction
 
 " TODO переименовать на DepsRebar3, сделать DepsMix
