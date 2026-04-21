@@ -73,6 +73,44 @@ function Foo1()
     normal %%l
 endfunction
 
+" TODO можно передавать count, чтобы можно было выбирать результат поиска
+function GoToFile()
+    " get selection
+    " надо запомнить предыдущее положение курсора (в случае отказа, чтобы
+    " корректно откатиться)
+    normal viW
+    let selection_text_list = getregion(getpos('v'), getpos('.'))
+    normal 
+
+    let l:selection_text = get(selection_text_list, 0, "")
+    if selection_text == ""
+        return 1
+    endif
+
+    let list =
+    \ l:selection_text
+    \ ->substitute(':[a-z_]\+/[0-9]\+','','')
+    \ ->split(':')
+
+    let file = get(list, 0, "")
+    let line = get(list, 1, "")
+
+    if file == "" || line == ""
+        return 1
+    endif
+
+    let file = findfile(file, &path, 1)
+    echom file
+
+    if file == ""
+        return 1
+    endif
+
+    execute "buffer " . bufadd(file)
+    call setcursorcharpos(line, 1)
+endfunction
+
+" TODO переименовать на DepsRebar3, сделать DepsMix
 " Позволяет искать приложения, зависимые от <args>
 command -nargs=1 -bar Deps grep '\b<args>\b,' -G '.*\.app\.src$' | copen
 command -nargs=1 -bar Depsl lgrep '\b<args>\b,' -G '.*\.app\.src$' | lopen
