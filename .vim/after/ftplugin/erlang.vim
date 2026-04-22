@@ -95,6 +95,8 @@ function s:GoToFile(...)
         let selection_text_list = getregion(getpos("v"), getpos("."))
         normal 
         let l:selection_text = get(selection_text_list, 0, "")
+        " Возвращаем курсор текущую позицию перед переходом
+        call setpos(".", oldpos)
         if selection_text == ""
             throw "no text"
         endif
@@ -121,7 +123,6 @@ function s:GoToFile(...)
     catch
         " Отображает содержимое ошибки, оставил для дебага
         " echom v:exception
-        call setpos(".", oldpos)
     endtry
 endfunction
 
