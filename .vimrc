@@ -42,7 +42,7 @@ endfunction
 function MyTabLabel(n)
   let buflist = tabpagebuflist(a:n)
   let winnr = tabpagewinnr(a:n)
-  return a:n." ".bufname(buflist[winnr - 1])
+  return a:n . " " . fnamemodify(bufname(buflist[winnr - 1]), ":t")
 endfunction
 
 "statusline
