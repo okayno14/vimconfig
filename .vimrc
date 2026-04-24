@@ -76,7 +76,7 @@ set hlsearch
 set incsearch
 set wildmenu
 set wildoptions=pum
-set redrawtime=500
+" set redrawtime=500
 "=============================================================
 
 "indents
