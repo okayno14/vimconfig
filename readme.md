@@ -30,7 +30,7 @@ jq
 ## add new package
 
 ```bash
-mkdir .vim/pack/<org>/start
+mkdir -p .vim/pack/<org>/start
 git submodule add <git-url> .vim/pack/<org>/start/<pack>
 ```
 
