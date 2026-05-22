@@ -1,3 +1,7 @@
+" Конфигурация для $VIMRUNTIME/ftplugin/erlang.vim
+" let g:erlang_folding=1
+" let g:erlang_extend_path=1
+
 " Делаем глобально, чтобы работало в терминальном буфере
 set suffixesadd+=.erl
 set suffixesadd+=.ex
