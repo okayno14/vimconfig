@@ -76,3 +76,6 @@
 [submodule ".vim/pack/andyl/start/vim-textobj-elixir"]
 	path = .vim/pack/andyl/start/vim-textobj-elixir
 	url = https://github.com/andyl/vim-textobj-elixir.git
+[submodule ".vim/pack/artyom/start/guit"]
+	path = .vim/pack/artyom/start/guit
+	url = https://github.com/trilessfold/Guit.nvim.git
