@@ -24,23 +24,23 @@ map ]b :bn
 map [b :bp
 
 " start of line
-:cnoremap <C-A>		<Home>
+:cnoremap <C-A>     <Home>
 " back one character
-:cnoremap <C-B>		<Left>
+:cnoremap <C-B>     <Left>
 " delete character under cursor
-:cnoremap <C-D>		<Del>
+:cnoremap <C-D>     <Del>
 " end of line
-:cnoremap <C-E>		<End>
+:cnoremap <C-E>     <End>
 " forward one character
-:cnoremap <C-F>		<Right>
+:cnoremap <C-F>     <Right>
 " recall newer command-line
-:cnoremap <C-N>		<Down>
+:cnoremap <C-N>     <Down>
 " recall previous (older) command-line
-:cnoremap <C-P>		<Up>
+:cnoremap <C-P>     <Up>
 " back one word (<A-F>)
-:cnoremap f       	<S-Right>
+:cnoremap f           <S-Right>
 " forward one word (<A-B>)
-:cnoremap b	        <S-Left>
+:cnoremap b           <S-Left>
 
 "===== FUZZY SEARCH =====
 
@@ -98,7 +98,7 @@ nnoremap <leader>bD :bd!
 nnoremap <leader>fr :grep<Space>
 nnoremap <leader>fw :grep '\b0\b'<Space>
 nnoremap <leader>fwl :lgrep '\b0\b'<Space>
-nnoremap <leader>m :marks QWE<CR>:normal `
+nnoremap <leader>m :marks<CR>:normal `
 
 " search.fuzzbox
 let g:enable_fuzzbox_keymaps = 0
