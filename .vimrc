@@ -172,6 +172,12 @@ function AbsPath()
     return getcwd() . '/' . @%
 endfunction
 
+command -nargs=0 BD call s:bd_2()
+
+function s:bd_2()
+    split | b # | wincmd w | bd
+endfunction
+
 " plugins
 "=============================================================
 set nocompatible
