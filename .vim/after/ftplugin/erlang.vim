@@ -130,6 +130,16 @@ function s:GoToFile(...)
     endtry
 endfunction
 
-runtime after/ftplugin/erl_fold.vim
+function FoldSyntax()
+    setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
+    setlocal foldmethod=expr
+endfunction
+
+function FoldBlock()
+    runtime after/ftplugin/erl_fold.vim
+endfunction
+
+call FoldSyntax()
+
 runtime after/plugin/no_auto_comments.vim
 
