@@ -139,6 +139,12 @@ function FoldBlock()
     runtime after/ftplugin/erl_fold.vim
 endfunction
 
+" Терм предварительно должен быть скопирован
+function FormatTerm()
+    enew | execute "set filetype=erlang" | 0put 0 | execute "normal VGgJ" | execute "normal Vgq"
+endfunction
+
+
 call FoldSyntax()
 call TurnOffAutoComments()
 
