@@ -140,7 +140,7 @@ function FoldBlock()
 endfunction
 
 " Терм предварительно должен быть скопирован
-function FormatTerm()
+function! FormatTerm()
     enew | execute "set filetype=erlang" | 0put 0 | execute "normal VGgJ" | execute "normal Vgq"
 endfunction
 
