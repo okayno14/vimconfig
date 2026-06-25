@@ -23,9 +23,6 @@ au User lsp_setup call lsp#register_server({
 
 " Logs
 
-" Помогает для разбора json-ок
-" execute 'normal y%' | split | enew | execute 'normal "0p' | execute "%!jq"
-
 " let g:lsp_show_message_log_level='info'
 " let g:lsp_log_file = expand('~/vim-lsp.log')
 " let g:lsp_log_verbose = 1
