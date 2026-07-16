@@ -1,6 +1,10 @@
 let g:fuzzbox_files_ignore_file = ['*.beam', '*.so', '*.exe', '*.dll', '*.dump', '*.core', '*.swn', '*.swp']
 let g:fuzzbox_files_ignore_dir = ['.git', '.hg', '.svn', '.rebar', '.eunit', 'ecss-node']
 
+augroup filetypedetect
+    au! BufRead,BufNewFile */ecss/*.config setfiletype erlang
+augroup END
+
 " коллбэк, который проставляет &path (вызовется в ~/.vim/after/erlang.vim)
 function SetErlangCustomPath()
     set path=
