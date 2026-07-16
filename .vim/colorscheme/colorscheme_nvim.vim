@@ -36,12 +36,14 @@
 
 "==============================================
 " colorscheme caret
+colorscheme flume
 "==============================================
 
 "==============================================
-colorscheme shades-of-purple
+" colorscheme shades-of-purple
 " Для подсветки изменённого текста внутри Diff (word | char)
 " hi! def link DiffText Changed
-hi! def link DiffText MatchParen
+" hi! def link DiffText MatchParen
 "==============================================
+
 
