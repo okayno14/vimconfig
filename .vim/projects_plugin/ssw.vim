@@ -35,6 +35,8 @@ nnoremap <leader>fr :grep --erl --elixir<Space>
 " чтобы не ломать старые модули
 DisableAutoFormat
 
+so ./terminals.vim
+
 " ТАК НАДО (почему-то объявлять ft надо в конце, чтобы подтянулся системный
 " скрипт для erlang-а и файл в ~/.vim/after/ftplugin)
 set filetype=erlang
