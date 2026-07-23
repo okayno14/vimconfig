@@ -146,7 +146,6 @@ endfunction
 
 
 call FoldSyntax()
-call TurnOffAutoComments()
 
 runtime after/plugin/no_auto_comments.vim
 
