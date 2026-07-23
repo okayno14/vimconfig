@@ -15,11 +15,13 @@ au User lsp_setup call lsp#register_server({
     \ 'allowlist': ['gleam'],
     \ })
 
-au User lsp_setup call lsp#register_server({
-    \ 'name': 'elixir',
-    \ 'cmd': ['elixir-ls'],
-    \ 'allowlist': ['elixir'],
-    \ })
+if (executable('elixir-ls'))
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'elixir',
+        \ 'cmd': ['elixir-ls'],
+        \ 'allowlist': ['elixir'],
+        \ })
+endif
 
 " Logs
 
