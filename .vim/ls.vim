@@ -1,19 +1,18 @@
-if !exists("g:erlang_lsp")
-    let g:erlang_lsp = ['elp', 'server']
-    " let g:erlang_lsp = ['erlang_ls']
+if (executable('elp'))
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'erlang',
+        \ 'cmd': ['elp', 'server'],
+        \ 'allowlist': ['erlang'],
+        \ })
 endif
 
-au User lsp_setup call lsp#register_server({
-    \ 'name': 'erlang',
-    \ 'cmd': g:erlang_lsp,
-    \ 'allowlist': ['erlang'],
-    \ })
-
-au User lsp_setup call lsp#register_server({
-    \ 'name': 'gleam',
-    \ 'cmd': ['gleam', 'lsp'],
-    \ 'allowlist': ['gleam'],
-    \ })
+if (executable('gleam'))
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'gleam',
+        \ 'cmd': ['gleam', 'lsp'],
+        \ 'allowlist': ['gleam'],
+        \ })
+endif
 
 if (executable('elixir-ls'))
     au User lsp_setup call lsp#register_server({
