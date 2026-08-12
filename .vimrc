@@ -178,6 +178,11 @@ function s:bd_2()
     split | b # | wincmd w | bd
 endfunction
 
+function TSFold()
+    setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
+    setlocal foldmethod=expr
+endfunction
+
 " plugins
 "=============================================================
 set nocompatible

@@ -130,11 +130,6 @@ function s:GoToFile(...)
     endtry
 endfunction
 
-function FoldSyntax()
-    setlocal foldexpr=v:lua.vim.treesitter.foldexpr()
-    setlocal foldmethod=expr
-endfunction
-
 function FoldBlock()
     runtime after/ftplugin/erl_fold.vim
 endfunction
@@ -144,8 +139,7 @@ function! FormatTerm()
     enew | execute "set filetype=erlang" | 0put 0 | execute "normal VGgJ" | execute "normal Vgq"
 endfunction
 
-
-call FoldSyntax()
+call TSFold()
 
 runtime after/plugin/no_auto_comments.vim
 
