@@ -1,3 +1,5 @@
+let s:do_log = v:false
+
 let s:log_label_list = [
     \ "ERROR",
     \ "WARN",
@@ -17,6 +19,17 @@ let s:log_label_list = [
 " Окно лучше оставлять маленьким
 let s:window = 2
 
+function s:log(msg, line = expand('<sflnum>'))
+  if s:do_log
+    call s:log_m(a:msg, a:line)
+  endif
+endfunction
+
+function s:log_m(msg, line)
+  let file = expand('<script>')
+  echom printf("[%s:%s] %s", file, a:line, a:msg)
+endfunction
+
 " TODO почитать про кэш линий, возможно, что имеет смысл
 function s:log_fold()
   let current_line = v:lnum
@@ -24,7 +37,7 @@ function s:log_fold()
   let has_log_current = s:has_log_label(getline(current_line))
   " однострочный лог
   if has_log_current && s:has_log_label(getline(current_line + 1))
-    " echom current_line .. " 23 nowrap"
+    call s:log("nowrap")
     return "0"
   endif
   " cache
@@ -32,29 +45,29 @@ function s:log_fold()
   " начало длинного лога
   " Защита от логов, с label + (s:window + 1) строк
   if has_log_current && !s:has_log_down(current_line, s:window + 2)
-    " echom current_line .. " 28 wrap"
+    call s:log("wrap begin")
     return ">1"
   endif
   " вторая строка
   " Защита от логов, с label + (s:window + 1) строк
   if s:has_log_label(getline(current_line - 1)) && s:has_log_down(current_line, s:window + 1)
-    " echom current_line .. "40 nowrap"
+    call s:log("nowrap")
     return "0"
   endif
   " тело длинного лога
   if !has_log_current && !has_log_down
-    " echom current_line .. " 33 wrap"
+    call s:log("wrap")
     return "1"
   endif
   " последняя строка
   " Защита от логов, с label + (s:window + 1) строк
   if s:has_log_label(getline(current_line + 1)) && s:has_log_up(current_line, s:window + 1)
-    " echom current_line .. "52 nowrap"
+    call s:log("nowrap")
     return "0"
   endif
   " конец длинного лога
   if !has_log_current && has_log_down && !s:has_log_up(current_line)
-    " echom current_line .. " 38 wrap"
+    call s:log("wrap")
     return "1"
   endif
   return "0"
@@ -63,16 +76,12 @@ endfunction
 function s:has_log_up(current_line, window = s:window)
   let begin = a:current_line - 1
   let end = begin - a:window + 1
-  " echom a:current_line
-  " echom range(begin, end, -1)
   return reduce(range(begin, end, -1), {acc, line -> acc || s:has_log_label(getline(line)) }, v:false)
 endfunction
 
 function s:has_log_down(current_line, window = s:window)
   let begin = a:current_line + 1
   let end = begin + a:window - 1
-  " echom a:current_line
-  " echom range(begin, end, 1)
   return reduce(range(begin, end, 1), {acc, line -> acc || s:has_log_label(getline(line)) }, v:false)
 endfunction
 
