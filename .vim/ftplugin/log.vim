@@ -50,7 +50,8 @@ function s:log_fold()
   endif
   " вторая строка
   " Защита от логов, с label + (s:window + 1) строк
-  if s:has_log_label(getline(current_line - 1)) && s:has_log_down(current_line, s:window + 1)
+  if s:has_log_label(getline(current_line - 1))
+    \ && s:has_log_down(current_line, s:window + 1)
     call s:log("nowrap")
     return "0"
   endif
@@ -61,7 +62,8 @@ function s:log_fold()
   endif
   " последняя строка
   " Защита от логов, с label + (s:window + 1) строк
-  if s:has_log_label(getline(current_line + 1)) && s:has_log_up(current_line, s:window + 1)
+  if s:has_log_label(getline(current_line + 1))
+    \ && s:has_log_up(current_line, s:window + 1)
     call s:log("nowrap")
     return "0"
   endif
@@ -76,19 +78,42 @@ endfunction
 function s:has_log_up(current_line, window = s:window)
   let begin = a:current_line - 1
   let end = begin - a:window + 1
-  return reduce(range(begin, end, -1), {acc, line -> acc || s:has_log_label(getline(line)) }, v:false)
+  return reduce(
+  \   range(begin, end, -1),
+  \   {
+  \     acc, line ->
+  \     acc || s:has_log_label(getline(line))
+  \   },
+  \   v:false
+  \ )
 endfunction
 
 function s:has_log_down(current_line, window = s:window)
   let begin = a:current_line + 1
   let end = begin + a:window - 1
-  return reduce(range(begin, end, 1), {acc, line -> acc || s:has_log_label(getline(line)) }, v:false)
+  call s:log("test")
+  return reduce(
+  \   range(begin, end, 1),
+  \   {
+  \     acc, line ->
+  \     acc || s:has_log_label(getline(line))
+  \   },
+  \   v:false
+  \ )
 endfunction
 
 " TODO сделать log_label_list как переменную по умолчанию
 function s:has_log_label(line)
   " TODO можно соптимизировать: если поменяли на true, то остановить обход
-  return reduce(s:log_label_list, { acc, log_label -> acc || match(a:line, "\\c" .. "\\<" .. log_label .. "\\>") != -1 }, v:false)
+  call s:log("test2")
+  return reduce(
+  \   s:log_label_list,
+  \   {
+  \     acc, log_label ->
+  \     acc || match(a:line, "\\c" .. "\\<" .. log_label .. "\\>") != -1
+  \   },
+  \   v:false
+  \ )
 endfunction
 
 " Подразумевается замена, т.к. у других filetype возможна своя реализация
