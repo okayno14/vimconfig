@@ -96,6 +96,7 @@ nnoremap <leader>bd :bd
 nnoremap <leader>bD :bd!
 " В зависимости от типа файла может переопределяться
 nnoremap <leader>fr :grep<Space>
+nnoremap <leader>fR :Grep<Space>
 nnoremap <leader>fw :grep '\b0\b'<Space>
 nnoremap <leader>fwl :lgrep '\b0\b'<Space>
 nnoremap <leader>m :marks<CR>:normal `
