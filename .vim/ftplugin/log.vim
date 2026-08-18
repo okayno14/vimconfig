@@ -37,7 +37,7 @@ function s:log_fold()
   let has_log_current = s:has_log_label(getline(current_line))
   " однострочный лог
   if has_log_current && s:has_log_label(getline(current_line + 1))
-    call s:log("nowrap")
+    call s:log(current_line .. " oneline log -> nowrap")
     return "0"
   endif
   " cache
@@ -45,31 +45,31 @@ function s:log_fold()
   " начало длинного лога
   " Защита от логов, с label + (s:window + 1) строк
   if has_log_current && !s:has_log_down(current_line, s:window + 2)
-    call s:log("wrap begin")
+    call s:log(current_line .. " long log label -> wrap begin")
     return ">1"
   endif
   " вторая строка
   " Защита от логов, с label + (s:window + 1) строк
   if s:has_log_label(getline(current_line - 1))
     \ && s:has_log_down(current_line, s:window + 1)
-    call s:log("nowrap")
+    call s:log(current_line .. " line after small log label -> nowrap")
     return "0"
   endif
   " тело длинного лога
   if !has_log_current && !has_log_down
-    call s:log("wrap")
+    call s:log(current_line .. " long log body -> wrap")
     return "1"
   endif
   " последняя строка
   " Защита от логов, с label + (s:window + 1) строк
   if s:has_log_label(getline(current_line + 1))
     \ && s:has_log_up(current_line, s:window + 1)
-    call s:log("nowrap")
+    call s:log(current_line .. " end of small log -> nowrap")
     return "0"
   endif
   " конец длинного лога
   if !has_log_current && has_log_down && !s:has_log_up(current_line)
-    call s:log("wrap")
+    call s:log(current_line .. " end of long log -> wrap")
     return "1"
   endif
   return "0"
@@ -91,7 +91,6 @@ endfunction
 function s:has_log_down(current_line, window = s:window)
   let begin = a:current_line + 1
   let end = begin + a:window - 1
-  call s:log("test")
   return reduce(
   \   range(begin, end, 1),
   \   {
@@ -105,7 +104,6 @@ endfunction
 " TODO сделать log_label_list как переменную по умолчанию
 function s:has_log_label(line)
   " TODO можно соптимизировать: если поменяли на true, то остановить обход
-  call s:log("test2")
   return reduce(
   \   s:log_label_list,
   \   {
