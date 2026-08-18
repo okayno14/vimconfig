@@ -213,5 +213,6 @@ runtime netrw_2.vim
 packadd cfilter
 packadd matchit
 runtime terminal.vim
+runtime favorite_files.vim
 "=============================================================
 
