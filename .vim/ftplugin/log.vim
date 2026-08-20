@@ -19,6 +19,7 @@ let s:log_label_list = [
 " Окно лучше оставлять маленьким
 let s:window = 2
 
+" TODO добавить уровни
 function s:log(msg, line = expand('<sflnum>'))
   if s:do_log
     call s:log_m(a:msg, a:line)
@@ -30,13 +31,28 @@ function s:log_m(msg, line)
   echom printf("[%s:%s] %s", file, a:line, a:msg)
 endfunction
 
-" TODO почитать про кэш линий, возможно, что имеет смысл
 function s:log_fold()
+  if !exists("b:last_tick")
+    let b:last_tick = -1
+  endif
+  if !exists("b:cache")
+    " TODO вынести в функцию
+    let total_lines = line('$')
+    let b:cache = repeat([-1], total_lines)
+  endif
+  " Суть в том, что при каждом открытии буфера (:e) в начале будет сброс
+  if b:last_tick != b:changedtick
+    " TODO вынести в функцию
+    let total_lines = line('$')
+    let b:cache = repeat([-1], total_lines)
+
+    let b:last_tick = b:changedtick
+  endif
   let current_line = v:lnum
   " cache
-  let has_log_current = s:has_log_label(getline(current_line))
+  let has_log_current = s:has_log_label_cached(current_line)
   " однострочный лог
-  if has_log_current && s:has_log_label(getline(current_line + 1))
+  if has_log_current && s:has_log_label_cached(current_line + 1)
     call s:log(current_line .. " oneline log -> nowrap")
     return "0"
   endif
@@ -50,7 +66,7 @@ function s:log_fold()
   endif
   " вторая строка
   " Защита от логов, с label + (s:window + 1) строк
-  if s:has_log_label(getline(current_line - 1))
+  if s:has_log_label_cached(current_line - 1)
     \ && s:has_log_down(current_line, s:window + 1)
     call s:log(current_line .. " line after small log label -> nowrap")
     return "0"
@@ -62,8 +78,9 @@ function s:log_fold()
   endif
   " последняя строка
   " Защита от логов, с label + (s:window + 1) строк
-  if s:has_log_label(getline(current_line + 1))
+  if s:has_log_label_cached(current_line + 1)
     \ && s:has_log_up(current_line, s:window + 1)
+  " if s:has_log_up(current_line, s:window + 1)
     call s:log(current_line .. " end of small log -> nowrap")
     return "0"
   endif
@@ -80,7 +97,7 @@ function s:has_log_up(current_line, window = s:window)
   let end = begin - a:window + 1
   let ret = indexof(
   \   range(begin, end, -1),
-  \   {index, line -> s:has_log_label(getline(line))},
+  \   {index, line -> s:has_log_label_cached(line)},
   \ )
   if ret == -1
     return v:false
@@ -94,13 +111,24 @@ function s:has_log_down(current_line, window = s:window)
   let end = begin + a:window - 1
   let ret = indexof(
   \   range(begin, end, 1),
-  \   {index, line -> s:has_log_label(getline(line))},
+  \   {index, line -> s:has_log_label_cached(line)},
   \ )
   if ret == -1
     return v:false
   else
     return v:true
   endif
+endfunction
+
+function s:has_log_label_cached(line)
+    let elem = b:cache[a:line]
+    if elem == -1
+        let ret = s:has_log_label(getline(a:line))
+        let b:cache[a:line - 1] = ret
+        return ret
+    else
+        ret elem
+    endif
 endfunction
 
 " TODO сделать log_label_list как переменную по умолчанию
