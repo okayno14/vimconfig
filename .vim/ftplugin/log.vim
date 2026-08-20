@@ -78,40 +78,42 @@ endfunction
 function s:has_log_up(current_line, window = s:window)
   let begin = a:current_line - 1
   let end = begin - a:window + 1
-  return reduce(
+  let ret = indexof(
   \   range(begin, end, -1),
-  \   {
-  \     acc, line ->
-  \     acc || s:has_log_label(getline(line))
-  \   },
-  \   v:false
+  \   {index, line -> s:has_log_label(getline(line))},
   \ )
+  if ret == -1
+    return v:false
+  else
+    return v:true
+  endif
 endfunction
 
 function s:has_log_down(current_line, window = s:window)
   let begin = a:current_line + 1
   let end = begin + a:window - 1
-  return reduce(
+  let ret = indexof(
   \   range(begin, end, 1),
-  \   {
-  \     acc, line ->
-  \     acc || s:has_log_label(getline(line))
-  \   },
-  \   v:false
+  \   {index, line -> s:has_log_label(getline(line))},
   \ )
+  if ret == -1
+    return v:false
+  else
+    return v:true
+  endif
 endfunction
 
 " TODO сделать log_label_list как переменную по умолчанию
 function s:has_log_label(line)
-  " TODO можно соптимизировать: если поменяли на true, то остановить обход
-  return reduce(
+  let ret = indexof(
   \   s:log_label_list,
-  \   {
-  \     acc, log_label ->
-  \     acc || match(a:line, "\\c" .. "\\<" .. log_label .. "\\>") != -1
-  \   },
-  \   v:false
+  \   {index, log_label -> match(a:line, "\\c" .. "\\<" .. log_label .. "\\>") != -1},
   \ )
+  if ret == -1
+    return v:false
+  else
+    return v:true
+  endif
 endfunction
 
 " Подразумевается замена, т.к. у других filetype возможна своя реализация
