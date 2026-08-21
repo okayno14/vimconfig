@@ -1,4 +1,5 @@
-let s:do_log = v:false
+let s:levels = #{debug: 0, trace: 1, info: 2, error: 3, warn: 4}
+let s:config = {'log.vim': s:levels.info}
 
 let s:log_label_list = [
     \ "ERROR",
@@ -19,16 +20,19 @@ let s:log_label_list = [
 " Окно лучше оставлять маленьким
 let s:window = 2
 
-" TODO добавить уровни
-function s:log(msg, line = expand('<sflnum>'))
-  if s:do_log
-    call s:log_m(a:msg, a:line)
+function s:log(msg, level = s:levels.debug, line = expand('<sflnum>'))
+  let file = expand('<script>:t')
+  let file_level = get(s:config, file, -1)
+  if file_level == -1
+    return v:false
+  elseif a:level >= file_level
+    call s:log_m(a:msg, a:line, file)
+    return v:true
   endif
 endfunction
 
-function s:log_m(msg, line)
-  let file = expand('<script>:t')
-  echom printf("[%s:%s] %s", file, a:line, a:msg)
+function s:log_m(msg, line, file)
+  echom printf("[%s:%s] %s", a:file, a:line, a:msg)
 endfunction
 
 function s:log_fold()
