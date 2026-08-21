@@ -27,7 +27,7 @@ function s:log(msg, line = expand('<sflnum>'))
 endfunction
 
 function s:log_m(msg, line)
-  let file = expand('<script>')
+  let file = expand('<script>:t')
   echom printf("[%s:%s] %s", file, a:line, a:msg)
 endfunction
 
