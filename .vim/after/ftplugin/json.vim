@@ -1,4 +1,4 @@
-set formatprg=jq\ .
+setlocal formatprg=jq\ .
 
 " Терм предварительно должен быть скопирован
 function! FormatTerm()
