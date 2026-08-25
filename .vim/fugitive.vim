@@ -1,3 +1,7 @@
+
+au User FugitiveIndex nnoremap <buffer> F :Git fetch<CR>
+au User FugitiveIndex nnoremap <buffer> M :Git merge --ff-only<CR>
+
 " Посмотреть последовательный ренж коммитов (MR).
 " Складирует все изменённые файлы между branch_old branch_new в quickfix
 " Потом на выбранном файле нужно вызвать GCompareDiffSplit (или нажать dd (не всегда работает))
