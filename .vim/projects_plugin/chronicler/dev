@@ -1,3 +1,4 @@
 #! /usr/bin/bash
 
-nix develop ~/srv/git/vimconfig/vim-lsp/.vim/projects_plugin/chronicler/ $@
+nix develop $(dirname $(realpath "$0")) $@
+

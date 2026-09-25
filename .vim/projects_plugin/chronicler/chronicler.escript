@@ -12,7 +12,7 @@ main(["help"]) ->
     0.
 
 make_link_ignore_exist(Target, Link) ->
-    case file:make_link(Target, Link) of
+    case file:make_symlink(Target, Link) of
         ok -> ok;
         {error, eexist} -> ok
     end.
