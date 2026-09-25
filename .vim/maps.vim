@@ -7,6 +7,7 @@ nnoremap <leader>s :%s:\<\>:
 nnoremap <leader>t :TmpFile<Space>
 nnoremap <leader>q :call ToggleQuickfix()<CR>
 nnoremap <leader>l :call ToggleLocationList()<CR>
+nnoremap [[<C-i> :call PrevKeyWord()<CR>
 
 " Позволяет выделить недавно вставленный/скопированный текст
 nnoremap <leader>gv v`[o`]
@@ -187,7 +188,28 @@ function! ToggleLocationList()
     else
         lclose
     endif
+endfunction
 
+function! PrevKeyWord()
+    " TODO Вынести в функцию get_iW (s:GoToFile)
+
+    " :help write-library-script
+    " call mylib#myfunction(arg)
+    " Vim will recognize the function name and when it's not defined search for
+    " the script "autoload/mylib.vim"
+
+    normal viW
+    let selection_text_list = getregion(getpos("v"), getpos("."))
+    normal 
+    let l:selection_text = get(selection_text_list, 0, "")
+    let oldpos = getpos(".")
+    call setpos(".", oldpos)
+
+    if selection_text == ""
+        throw "No identifier under cursor"
+    endif
+
+    call search("\\<" .. selection_text .. "\\>" , 'b')
 endfunction
 
 " git (fugitive) macros
