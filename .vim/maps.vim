@@ -198,18 +198,21 @@ function! PrevKeyWord()
     " Vim will recognize the function name and when it's not defined search for
     " the script "autoload/mylib.vim"
 
-    let oldpos = getpos(".")
+    " let oldpos = getpos(".")
     normal viw
     let selection_text_list = getregion(getpos("v"), getpos("."))
     normal 
     let l:selection_text = get(selection_text_list, 0, "")
-    call setpos(".", oldpos)
+    " call setpos(".", oldpos)
+    normal b
 
     if selection_text == ""
         throw "No identifier under cursor"
     endif
 
-    call search("\\<" .. selection_text .. "\\>" , 'b')
+    if search("\\<" .. selection_text .. "\\>" , 'b') == 0
+        call setpos(".", oldpos)
+    endif
 endfunction
 
 " git (fugitive) macros
