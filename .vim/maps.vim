@@ -198,11 +198,11 @@ function! PrevKeyWord()
     " Vim will recognize the function name and when it's not defined search for
     " the script "autoload/mylib.vim"
 
-    normal viW
+    let oldpos = getpos(".")
+    normal viw
     let selection_text_list = getregion(getpos("v"), getpos("."))
     normal 
     let l:selection_text = get(selection_text_list, 0, "")
-    let oldpos = getpos(".")
     call setpos(".", oldpos)
 
     if selection_text == ""
