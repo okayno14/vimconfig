@@ -1,39 +1,38 @@
 function Init()
-    if !has('nvim')
-        finish
-    endif
-
-    if !bufexists("sh")
-        execute "terminal" | RenameBuffer sh
-    endif
-
-    if !bufexists("ds")
-        execute "terminal" | RenameBuffer ds | call chansend(b:terminal_job_id, "./bu ds cn ntc")
-    endif
-
-    if !bufexists("myc")
-        execute "terminal" | RenameBuffer myc | call chansend(b:terminal_job_id, "./bu mycelium cn ntc")
-    endif
-
-    if !bufexists("sip")
-        execute "terminal" | RenameBuffer sip | call chansend(b:terminal_job_id, "./bu pa-sip cn ntc")
-    endif
-
-    if !bufexists("core")
-        execute "terminal" | RenameBuffer core | call chansend(b:terminal_job_id, "./bu core cn ntc")
-    endif
-
-    if !bufexists("mediator")
-        execute "terminal" | RenameBuffer mediator | call chansend(b:terminal_job_id, "./bu mediator cn ntc")
-    endif
-
-    if !bufexists("ccn")
-        execute "terminal" | RenameBuffer ccn | call chansend(b:terminal_job_id, "ensure.sh cocon.bash")
+    if has('nvim')
+        call s:init()
     endif
 endfunction
 
 function Terminate()
+    if has('nvim')
+        call s:terminate()
+    endif
+endfunction
+
+function s:init()
+    call s:ensure_terminal("sh", "")
+    call s:ensure_terminal("ds", "./bu ds cn ntc")
+    call s:ensure_terminal("myc", "./bu mycelium cn ntc")
+    call s:ensure_terminal("sip", "./bu pa-sip cn ntc")
+    call s:ensure_terminal("core", "./bu core cn ntc")
+    call s:ensure_terminal("mediator", "./bu mediator cn ntc")
+    call s:ensure_terminal("ccn", "ensure.sh cocon.bash")
+endfunction
+
+function s:terminate()
     bd! ds myc sip core mediator
     !docker ps -q --filter name=ecss-node* | xargs docker stop
 endfunction
 
+function s:ensure_terminal(name, cmd)
+    if !bufexists(a:name)
+        call s:terminal(a:name, a:cmd)
+    endif
+endfunction
+
+function s:terminal(name, cmd)
+    call execute("terminal")
+    call execute("file"." ".a:name)
+    call chansend(b:terminal_job_id, a:cmd)
+endfunction
