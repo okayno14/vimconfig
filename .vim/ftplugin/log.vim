@@ -16,6 +16,9 @@ let s:log_label_list = [
     \ "EMERGENCY",
 \ ]
 
+" TODO сделать несколько date_format, либо сделать конфигурацию
+let s:date_format = "[0-9]\\{4\\}-[0-9]\\{2\\}-[0-9]\\{2\\}"
+
 " Логи с длинной label + 4 строки
 " Окно лучше оставлять маленьким
 let s:window = 2
@@ -141,17 +144,26 @@ function s:has_log_label(line)
   \   s:log_label_list,
   \   {index, log_label -> match(a:line, "\\c" .. "\\<" .. log_label .. "\\>") != -1},
   \ )
-  if ret == -1
-    return v:false
+  let ret2 = match(a:line, s:date_format)
+
+  if ret != -1 && ret2 != -1
+      return v:true
   else
-    return v:true
+      return v:false
   endif
 endfunction
 
 " Подразумевается замена, т.к. у других filetype возможна своя реализация
 function! FoldSyntax()
+  let b:old_foldexpr = &foldexpr
+  let b:old_foldmethod = &foldmethod
   setlocal foldexpr=s:log_fold()
   setlocal foldmethod=expr
+endfunction
+
+function! NoFoldSyntax()
+  execute "setlocal foldexpr=" . b:old_foldexpr
+  execute "setlocal foldmethod=" . b:old_foldmethod
 endfunction
 
 set colorcolumn=0
