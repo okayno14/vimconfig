@@ -36,9 +36,7 @@
 
 "==============================================
 " colorscheme caret
-" colorscheme flume
-colorscheme neotrix
-let g:neotrix_dark_contrast = "galaxy_hard"
+colorscheme flume
 "==============================================
 
 "==============================================
