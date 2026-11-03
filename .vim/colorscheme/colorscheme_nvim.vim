@@ -36,7 +36,9 @@
 
 "==============================================
 " colorscheme caret
-colorscheme flume
+" colorscheme flume
+let g:everforest_background = 'hard'
+colorscheme everforest
 "==============================================
 
 "==============================================
