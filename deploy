@@ -1,0 +1,6 @@
+#! /bin/bash
+
+ln -s .vim/ ~/.vim -r
+ln -s .vimrc ~/.vimrc -r
+ln -s .vsnip/ ~/.vsnip -r
+ln -s .templates/ ~/templates -r
