@@ -71,3 +71,41 @@ com! LspDiagnosticsEnable call lsp#enable_diagnostics_for_buffer()
 com! LspDisable call lsp#disable()
 com! LspEnable call lsp#enable()
 
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+    nmap <buffer> <C-]> <plug>(lsp-definition)
+    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> gr <plug>(lsp-references)
+    nmap <buffer> gI <plug>(lsp-implementation)
+"     nmap <buffer> gt <plug>(lsp-type-definition)
+    nmap <buffer> <leader>gR <plug>(lsp-rename)
+    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+    nmap <buffer> gh <plug>(lsp-hover)
+    nmap <buffer> go <plug>(lsp-document-symbol-search)
+    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+    nmap <buffer> <C-n> <plug>(lsp-next-reference)
+    nmap <buffer> <C-p> <plug>(lsp-previous-reference)
+    nmap <buffer> ga <plug>(lsp-code-action)
+    nmap <buffer> gm <plug>(lsp-signature-help)
+    nnoremap <leader>h <plug>(lsp-preview-focus)
+
+    " Показать сообщение с ошибкой линии highlight line
+    nnoremap ghl :call LspLineDiagnostics()<CR>
+
+    let g:lsp_format_sync_timeout = 1000
+    " refer to doc to add more commands
+
+    nmap <buffer> <leader>tiz :LspCallHierarchyIncomingTree
+    nmap <buffer> <leader>toz :LspCallHierarchyOutgoingTree
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+    call vsnip_integ#integration#vimlsp#attach()
+augroup END
+

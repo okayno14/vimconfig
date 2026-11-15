@@ -196,19 +196,19 @@ filetype on
 filetype plugin on
 filetype indent off
 
-runtime ls.vim
+" runtime ls.vim
 runtime ctrlp.vim
 runtime fuzzbox.vim
 runtime maps.vim
 runtime autocmd.vim
 runtime vimwiki.vim
 runtime slime_conf.vim
-runtime vsnip.vim
+" runtime vsnip.vim
 runtime templates.vim
 runtime dadbod_ui_complete.vim
 runtime fugitive.vim
 runtime tmp_file.vim
-runtime colorscheme/colorscheme.vim
+" runtime colorscheme/colorscheme.vim
 runtime netrw_2.vim
 packadd cfilter
 packadd matchit
