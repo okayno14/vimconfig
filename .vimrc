@@ -157,7 +157,7 @@ set directory=$VIMHOME/swp//
 
 " diff
 "=============================================================
-set diffopt=inline:word,iwhite,filler,internal,closeoff,algorithm:myers,context:5,linematch:100,indent-heuristic,anchor
+set diffopt=inline:word,filler,internal,closeoff,algorithm:myers,context:5,linematch:100,indent-heuristic,anchor
 
 " utils
 "=============================================================
