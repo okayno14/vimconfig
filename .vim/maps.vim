@@ -4,6 +4,7 @@ set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁ
 let g:mapleader = ","
 
 nnoremap <C-S> :w<CR>
+nnoremap <C-C> ggVG"+y
 
 nnoremap <leader>s :%s:\<\>:
 nnoremap <leader>t :TmpFile<Space>
