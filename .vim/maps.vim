@@ -3,6 +3,8 @@ set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЁ
 
 let g:mapleader = ","
 
+nnoremap <C-S> :w<CR>
+
 nnoremap <leader>s :%s:\<\>:
 nnoremap <leader>t :TmpFile<Space>
 nnoremap <leader>q :call ToggleQuickfix()<CR>
