@@ -1,7 +1,7 @@
 set colorcolumn=80
 set textwidth=80
 
-ab pre <pre><code></code></pre>
+ab <buffer> pre <pre><code></code></pre>
 
-ab coll {{collapse(тык)}}
+ab <buffer> coll {{collapse(тык)}}
 
