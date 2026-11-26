@@ -12,5 +12,14 @@
             "    * заметка 1",
             "    * заметка 2"
         ]
+    },
+    "coll":{
+        "prefix": "coll",
+        "description": "скрытый элемент для vimwiki",
+        "body": [
+            "<details>",
+            "<summary></summary>",
+            "</details>"
+        ]
     }
 }
